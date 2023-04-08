@@ -1,0 +1,189 @@
+@import "../const/colors.scss";
+
+.footer{
+    display: grid;
+    grid-template-columns: 0.3fr 1fr;
+    align-items: center;
+    padding: 56px 60px;
+    width: 100%;
+    background-color: $lightness-color;
+
+    .logos-banner{
+        grid-column: 1 / 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .technopark-logo{
+        > a >img{
+            width: 200px;
+            height: 92px;
+        }
+    }
+    
+    .social-networks{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .instagram{
+            width: 72px;
+            height: 65px;
+        }
+
+        > a > img {
+            width: 49px;
+            height: 45px;
+        }
+    }
+
+    .copyrights{
+        grid-column: 2 / 3;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color:#072A6D;
+        .need-help{
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+
+            > h1{
+                font-family: 'Roboto';
+                
+                font-weight: 300;
+                font-size: 40px;
+                line-height: 171.69%;
+                
+                text-align: center;
+                color: #072A6D;
+
+            }
+            >a{
+                font-family: 'Roboto';
+                text-decoration: none;
+                font-weight: 300;
+                font-size: 40px;
+                line-height: 171.69%;
+                
+                text-align: center;
+                color: #072A6D;
+            }
+        }
+        .uni-contacts{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+            
+            .contact{
+                display: flex;
+                flex-direction: row;
+                
+                align-items: center;
+                
+                >a{
+                    text-decoration: none;
+                    font-family: 'Roboto';
+                    font-weight: 300;
+                    font-size: 32px;
+                    line-height: 171.69%;
+
+                    text-align: center;
+                    color: #072A6D;
+                }
+            }
+        }
+
+        
+    }
+}
+
+// @media all and (max-width: 1723px) {
+//     .footer{
+//         .logos-banner{
+//             .technopark-logo{
+//                 >img{
+//                     object-fit: cover;
+//                     max-width: 150px;
+//                     max-height: 65px;
+//                 }
+//             }
+//             .social-networks{
+//                 >img{
+//                     width: 33px;
+//                     height: 30px;
+//                 }
+//                 .instagram{
+//                     width: 48px;
+//                     height: 43px;
+//                 }
+//             }
+//         }
+//         .copyrights{
+//             .need-help{
+//                 display: flex;
+//                 flex-direction: column;
+//                 >h1{
+//                     font-size: x-large;
+//                 }
+//             }
+//             .uni-contacts{
+//                 display: flex;
+//                 flex-direction: column;
+//                 .contact{
+//                     >p{
+//                         font-size: x-large;
+//                     }
+//                     >img{
+//                         width: 33px;
+//                         height: 30px;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// @media all and (max-width: 1000px) {
+//     .footer{
+//         display: flex;
+//         flex-direction: column;
+//         .copyrights{
+//             .need-help{
+//                 >a{
+//                     font-size: xx-large;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// @media all and (max-width: 600px) {
+//     .footer{
+//         display: flex;
+//         flex-direction: column;
+//         .copyrights{
+//             .need-help{
+//                 >a{
+//                     font-size: x-large;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// @media all and (max-width: 500px) {
+//     .footer{
+//         display: flex;
+//         flex-direction: column;
+//         .copyrights{
+//             .need-help{
+//                 width: 100%;
+//                 >a{
+//                     font-size: 15px;
+//                 }
+//             }
+//         }
+//     }
+// }

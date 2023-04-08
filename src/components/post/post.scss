@@ -1,0 +1,92 @@
+@import "../const/colors.scss";
+
+.main-post{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: $lightness-color;
+    padding: 24px 59px;
+    border-radius: 20px 20px 20px 20px;
+    margin-bottom: 3rem;
+    .post{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        
+        .post-name{
+            text-align: center;
+            color: $second-color;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 48px;
+            line-height: 56px;
+        }
+        .post-content{
+            margin-top: 16px;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 23px;
+        }
+        .post-image{
+            margin-top: 16px;
+            >img{
+                width: 100%;
+            }
+        }
+        .like-comm-share{
+            display: flex;
+            flex-direction: row;
+            margin-top: 16px;
+
+            .like-button-liked, .like-button-false, .comment-button{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;
+                width: 114px;
+                height: 52px;
+                border: $second-color;
+                border-radius: 26px;
+                background-color: $second-color;
+                color:$lightness-color;
+                cursor: pointer;
+                
+                >span{
+                    font-family: 'Roboto';
+                    font-style: normal;
+                    font-weight:300;
+                    font-size: 24px;
+                    line-height: 28px;
+                }
+            }
+            .like-button-liked, .like-button-false:hover{
+                background-color: #670B0C;
+
+            }
+            .like-button-liked{
+                background-color: #480D0D;
+            }
+            .comment-button{
+                margin-left: 16px;
+                background-color: $primary-color;
+            }
+            .share-button{
+                display: flex;
+                width: 52px;
+                height: 52px;
+                background-color: #878787;
+                border: #878787;
+                border-radius: 26px;
+                align-items: center;
+                justify-content: center;
+                margin-left: 21px;
+            }
+        }
+    }
+    
+
+   
+}

@@ -1,0 +1,59 @@
+@import "../const/colors.scss";
+
+.mini-profile {
+    display: flex;
+    align-items: center;
+
+    b {
+        font-family: 'Roboto', serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        text-align: center;
+        text-decoration: none;
+        color: #4F4F4F;
+        padding: 0 10px;
+    }
+
+    .avatar-frame {
+        display: flex;
+        border-radius: 50%;
+        height: 3em;
+        width: 3em;
+        box-shadow: 0 0 10px #8A939B;
+        cursor: pointer;
+
+        img {
+            height: 2em;
+            margin: auto;
+        }
+    }
+
+    .dropdown-menu {
+        width: 6.75em;
+        position: absolute;
+        background-color: white;
+        overflow: hidden;
+        box-shadow: 0 0 10px #8A939B;
+        margin: 3.5em -3.75em;
+        border-radius: 5px;
+        z-index: 2;
+
+        a {
+            display: block;
+            position: relative;
+            font-family: 'Roboto', serif;
+            font-style: normal;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 15px;
+            color: #474747;
+            padding: 5px 0;
+        }
+
+        a:hover {
+            background-color: #8A939B;
+        }
+    }
+}

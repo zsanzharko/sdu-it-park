@@ -1,0 +1,21 @@
+.carousel-person {
+  position: relative;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 62px;
+
+  & > p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 36px;
+    color: #000;
+    width: max-content;
+    text-align: center;
+    letter-spacing: 0.175em;
+  }
+
+  & > img {
+    margin: auto;
+    max-width: 257px;
+  }
+}

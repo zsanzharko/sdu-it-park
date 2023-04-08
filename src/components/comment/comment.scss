@@ -1,0 +1,84 @@
+@import "../const/colors.scss";
+
+.main-comment{
+    display: flex;
+    flex-direction: column;
+    background-color: $lightness-color;
+
+    transition: all .2s;
+
+    .comment-section{
+        display: flex;
+        flex-direction: row;
+        padding: 15px;
+        .avatar{
+            width: 55px;
+            height: 55px;
+            display: flex;
+            background-color: #8A939B;
+            border-radius: 34px;
+            background-color: #8A939B;
+            justify-content: center;
+            align-items: center;
+            >img{
+                width: 50%;
+                height: 50% ;
+            }
+
+        }
+        .comment-content{
+            display: flex;
+            flex-direction: column;
+            margin-left: 15px;
+            .data-resp{
+                display: flex;
+                flex-direction: row;
+                >a{
+                    margin-left: 5px;
+                }
+            }
+        }
+        
+    }
+
+    .text-comment{
+        display:flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        .avatar{
+            display: flex;
+            width: 69px;
+            height: 69px;
+            border-radius: 34px;
+            background-color: #8A939B;
+            justify-content: center;
+            align-items: center;
+            >img{
+                width: 50%;
+                height: 50% ;
+            }
+            
+        }
+        .input-comment{
+            margin-left: 22px;
+            >input{
+                width: 650px;
+                border-radius: 15px;
+                height: 42px;
+                padding-left: 17px;
+            }
+        }
+
+        .input-send{
+            margin-left: 22px;
+            >button{
+                background:none;
+                border: none;
+            }
+        }
+        
+    }
+
+}

@@ -1,0 +1,674 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Сайт Технопарка</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="47cc95a6-2d8b-46ec-b6a9-40e7fcbf4d88" class="page sans"><header><h1 class="page-title">Сайт Технопарка</h1></header><div class="page-body"><p id="0bd8ed19-f15b-428c-9ad4-2cacfe4cb613" class="">
+</p><ul id="3983326f-dd4b-424b-9838-b40eed2780d4" class="toggle"><li><details open=""><summary>Главная страница (не отображается которая)</summary><ul id="382c01d2-604b-46fc-990e-48ba16b60d73" class="toggle"><li><details open=""><summary>Наши направления и предложения</summary><ul id="330fff0f-9d8d-4ff5-b9d9-d7de9e4f78b9" class="toggle"><li><details open=""><summary>Офис предпринимательства (OП)</summary><ul id="91dd09e4-a1de-4357-b4eb-44eb5c348e1c" class="toggle"><li><details open=""><summary>RU</summary><p id="a05adfb5-d66e-4fef-af17-10ea0715fd56" class="">Миссия Офиса предпринимательства (OП) - сподвигать студентов СДУ к предпринимательству посредством обучения, поддержки и наставничества.</p><p id="32393d03-1d49-45ad-951f-855e532b50bf" class="">Видение: Содействовать студентам и выпускникам на пути предпринимательства, помочь установить необходимые связи с инвесторами и действующими предпринимателями.</p><p id="6b175a9e-01b8-471d-a685-497a86d61e65" class="">Кому мы служим: студенты, ППС, сотрудники, исследователи и выпускники, а также население в непосредственной близости от Университета.</p><p id="60ca1b7a-e07a-4d54-bf41-d3d4c880288f" class="">Расположение:</p><p id="84186570-bd19-435b-81df-d14a44e5d61a" class="">ОП располагается на кампусе СДУ и будет включать в себя офисы и коворкинг.<div class="indented"><p id="aba9423c-7c33-4c22-ab86-5ea137ebc75c" class="">Деятельность ОП будет в двух основных направлениях:</p><p id="b7f74637-c91e-4733-9cae-36cc3c179a85" class="">1) В рамках учебной программы:</p><p id="3490e800-ed31-4a48-82b7-f4fad70d7b8f" class="">Разработка курсов по предпринимательству на факультетах СДУ, преподаваемым в рамках учебных программ на инженерном факультете, в бизнес-школе и на педагогическом факультете. Поддержка ППС учебными планами, методологией, материалами. Основная цель обучения состоит в том, чтобы студенты приобрели базовое понимание о предпринимательстве и соответствующие навыки. Общее количество студентов составит около 200-250 студентов в год.</p><p id="ec1e43eb-6154-46ff-87bf-f49181d0d2af" class="">2) Дополнительные меры поддержки:</p><p id="2a54a9f6-f7b6-459d-a840-0599770d6b43" class="">а) Серия гостевых лекций от действующих предпринимателей.</p><p id="9f9d4127-9c7c-4f1c-bea8-0f32b32a594a" class="">б) Бизнес-акселератор: программа будет проходить во время зимних и/или летних каникул, продолжительностью 3-4 недели.</p><p id="2906b5be-ec09-49ac-824f-34d842a9d400" class="">в) Бизнес-инкубатор и программа наставничества: инциативы призваны объединить сообщество единомышленников, оказать поддержку и предоставить необходимые ресурсы. Участие будет открытым для студентов, сотрудников, ППС кто хочет начать свой бизнес, независимо от стадии (от идеи до запуска), отрасли или типа бизнеса. Участие в этой программе будет длится до 6 месяцев и будет включать в себя доступ к офисным помещениям, технопарку и юридическим, бухгалтерским, финансовым и другим услугам.</p><p id="314e2c1c-0cbc-4f6b-92b9-03536fafc275" class="">г) Программа создания венчурных предприятий</p></div></p></details></li></ul><ul id="d1058e38-45b8-453d-adb3-7158fb392cb6" class="toggle"><li><details open=""><summary>EN</summary><p id="1907003f-57b9-4161-8427-5457c8d5cc2c" class="">Entrepreneurship Office (EO)<div class="indented"><p id="6d3bae99-e68c-41d6-ae4d-1853b0e95222" class="">Mission:</p><p id="777c5338-febd-4ee9-bbb3-277a4d76e918" class="">The mission of The Office for Entrepreneurship (OE) is to</p><p id="ea6502be-5be3-4c75-bb26-0b21b586cdca" class="">encourage SDU students to become entrepreneurs through training, support and mentoring.</p><p id="972cfab4-e267-4170-a2c6-aff7214d7bd3" class="">Vision:</p><p id="aeab706f-3df0-4f2a-8a20-f46346733c91" class="">Facilitating students and graduates on the path of entrepreneurship, to help establish the necessary connections with investors and current entrepreneurs.</p><p id="575f1d5e-f3f1-4689-940f-cc127ebd1deb" class="">Who we welcone: undergraduate and graduate students, faculty members, staff, researchers and alumni, community around university.</p><p id="e5b56139-7447-49ef-85fe-76e875f84084" class="">Location:</p><p id="5e649f75-c442-4d64-b6a8-9cff9e71467e" class="">EO is located on campus and will include offices as well as a co-working zone.</p><p id="a23bd200-415b-4f0a-81b5-b364e8adead7" class="">EO’s activities are in two main directions:</p><p id="15c4129d-c0f9-401a-83fd-5aba18ab1d97" class="">1) Within curriculum</p><p id="b8cef83f-c734-4c7a-8da6-48155463fdae" class="">The learning outcome is to teach students the basic understanding of entrepreneurship. The approximate total number of students to be covered is 200-250 students per year.</p><ul id="496ea321-347b-4264-b80c-f2a4f4a5a271" class="bulleted-list"><li style="list-style-type:disc">Designing entrepreneurship courses at SDU within regular curricula at the Engineering Faculty, Business School and Education Faculty.</li></ul><ul id="4bdbbdb3-5da8-48e3-9b2a-8733a86fdd78" class="bulleted-list"><li style="list-style-type:disc">Supporting faculty with syllabi, methodology, and materials.</li></ul><p id="47458378-e50c-4626-8094-37fc2356932b" class="">2) Extracurricular activities:</p><p id="cc7cc1c4-a1de-47c5-92f3-be406ab4227f" class="">a) Guest lecture series with well-known entrepreneurs</p><p id="434eac8a-10b5-4cd6-adbc-98f29c0d496c" class="">b) Business accelerator: the program will run during winter and summer breaks for 3-4 weeks.</p><p id="b2c62de5-d0d3-4bdc-9255-c458a0d495de" class="">c) Mentoring program / business incubation</p><p id="5d311ee4-b677-4c85-ab2a-101c2568b8e7" class="">The initiatives are created to bring together a community of like-minded people, provide support, and resources. Any student, staff, faculty who want to start a business are welcome regardless of the stage (from idea to launch), industry or business type. Duration of this program is up to 6 months and will include access to office space, technopark and legal, accounting, financial consulting services.</p><p id="6ceea50f-6c92-4f81-a278-ea1fdb53b612" class="">d) Venture Creation Program</p></div></p></details></li></ul><ul id="7cae5200-ade9-48cf-9597-dc6fad7ac8f9" class="toggle"><li><details open=""><summary>KZ</summary><p id="47f8c62a-9767-461c-8572-2f37f7c6f885" class="">Кәсіпорын кеңсесі (КК)<div class="indented"><p id="e1196914-39b3-493b-8370-64d7acb025ca" class="">Кәсіпкерлік басқармасының (КБ) миссиясы - сапалы оқыту, қолдау және тәлімгерлік арқылы SDU қауымдастығын кәсіпкерлік ойшылдар мен іскерлерге шабыттандыру және түрлендіру.</p><p id="d7dd3733-b358-4a7e-9371-5c2da7800453" class="">Көрініс: БӨ СДУ қауымдастығына және оның түлектеріне еңбек нарығында кәсіпкерлік және бәсекеге қабілетті болуға, инвесторлармен және жұмыс істеп тұрған кәсіпкерлермен қажетті байланыстарды орнатуға көмектеседі.</p><p id="dd7988dc-6af4-458a-af65-ca843063742c" class="">Біз кімге қызмет етеміз: студенттер, оқытушылар, қызметкерлер, зерттеушілер мен түлектер және университеттің тікелей маңындағы қоғамдастық.</p><p id="61038759-4629-4054-b116-35ad350b0ad3" class="">Орналасқан жері:</p><p id="0e543cb8-009a-49c5-b209-f8f793e2caf9" class="">EP SDU кампусында орналасқан және кеңселер мен коворкингті қамтиды.</p><p id="5f5cd399-d7bc-462a-8903-e842fd15f213" class="">ОП қызметі екі негізгі бағытта болады:</p><p id="c1d76ed4-d7cb-4764-8d9f-ea9709f8f953" class="">1) Оқу жоспарының бөлігі ретінде:</p><p id="55df0d08-85f4-48d3-b541-d1db4dbd6f37" class="">Инженерлік факультетте, бизнес мектебінде және білім беру факультетінде тұрақты оқу бағдарламасының бөлігі ретінде оқытылатын кәсіпкерлік курстарына қосымша, СДУ кафедраларында кәсіпкерлік курстарын насихаттау. Педагогикалық ұжымды қажетіне қарай оқу жоспарларымен, әдістемелермен, материалдармен қамтамасыз ету. Тренингтің негізгі мақсаты – студенттерге кәсіпкерлік және соған байланысты дағдылар туралы негізгі түсініктерді алу. Студенттердің жалпы саны жылына шамамен 200-250 студентті құрайды.</p><p id="bad396c7-8082-488b-b118-baefaaae32e4" class="">2) Қосымша қолдау шаралары:</p><p id="d5757510-f622-49a8-a6ce-35a9fa3bd567" class="">а) Қазіргі кәсіпкерлерден қонақтық дәрістер топтамасы</p><p id="77523a05-3ab8-4c85-9615-ef7321ec308b" class="">Әңгімелерден шабыт алу және олардың жеке тәжірибесімен жақсырақ танысу үшін қазіргі кәсіпкерлердің кездесулері, лекциялары.</p><p id="8e0f03ca-6446-48a0-83bc-b41956b882aa" class="">б) Бизнес акселераторы</p><p id="70a76efa-07c7-4e08-8402-e204a6045fa6" class="">Бұл бағдарлама 3-4 апталық қысқы және/немесе жазғы демалыс кезінде өтеді.</p><p id="653fe6a1-5ad7-466a-9d9e-2bc76b713cd9" class="">в) Бизнес-инкубатор және тәлімгерлік бағдарламасы</p><p id="eaf13857-9a97-4cd6-9e86-d45d6316778c" class="">Тәлімгерлік бағдарламасы, бизнес-инкубатор пікірлес адамдар қауымдастығын біріктіруге, қажет болған жағдайда қолдау мен ресурстарды қамтамасыз етуге арналған. Қатысу кезеңіне (идеядан бастап іске қосуға дейін, MVP), салаға немесе бизнес түріне қарамастан өз ісін ашқысы келетін студенттер, қызметкерлер, оқытушылар үшін ашық болады. Бұл бағдарламаға қатысу 6 айға дейін созылады және кеңсе кеңістігіне, технопаркке қол жеткізуді және заң, бухгалтерлік, қаржылық және т.б. сияқты консалтингтік қызметтерді қамтиды.</p><p id="9ea39265-1517-4303-b216-ae90e7ed667a" class="">г) Венчурлық капиталды құру бағдарламасы</p></div></p></details></li></ul></details></li></ul><ul id="4e998473-b9d7-48cf-8094-8fc0a8abae3c" class="toggle"><li><details open=""><summary>Софтвейр</summary><ul id="38d43093-c6ef-410a-aca8-b9884fcba7c0" class="toggle"><li><details open=""><summary>RU</summary><p id="b9d40378-835f-49fa-b3a7-6d4e0ddb771b" class="">Команда Технопарка предоставляет решения и продукты для бизнеса, такие как:<div class="indented"><ul id="e2089105-bbf2-4b4a-a5d6-7571cc173f9d" class="bulleted-list"><li style="list-style-type:disc">мобильное приложение</li></ul><ul id="d94a6a9f-ce6e-40ab-858e-ef2570474600" class="bulleted-list"><li style="list-style-type:disc">веб приложение</li></ul><ul id="c1c2f7be-f47c-43fd-8cb5-c4b316013bf2" class="bulleted-list"><li style="list-style-type:disc">дэшборды</li></ul><ul id="b87e4e17-e139-40d0-bd00-830e0c28bc2a" class="bulleted-list"><li style="list-style-type:disc">Internet of Things (IoT) решения</li></ul><ul id="b6c510e3-9e0c-4e8a-bc1e-81744d88577f" class="bulleted-list"><li style="list-style-type:disc">Computer Vision</li></ul><ul id="4c221bb5-c4ef-4f23-b2f1-abc0e7b2b05d" class="bulleted-list"><li style="list-style-type:disc">Natural Langiage Processing</li></ul><p id="7e2e26d8-7bcd-4f80-ad73-3318e5887632" class="">Наша команда состоит из опытных преподавателей, магистрантов и докторантов SDU. Также выпусники университета, имеющие большой опыт разработки, консультируют и курируют Технопарк в разработке продуктов.</p><p id="8893b7f4-7ea7-4839-bfad-fd3dafa8c2e7" class="">Студенты бакалавриата могут получить промышленный опыт разработки программного обеспечения, присоединившись к команде Технопарка.</p></div></p></details></li></ul><ul id="c00ddc94-f825-4402-9529-11fccc619484" class="toggle"><li><details open=""><summary>EN</summary><p id="401945c1-f0c5-401d-8024-6cd6ddde0e71" class="">The Technopark team provides solutions and develops products for business, such as:<div class="indented"><ul id="f36e81b7-057c-4fa8-8604-160a5337d71a" class="bulleted-list"><li style="list-style-type:disc">mobile app</li></ul><ul id="b267fe38-4001-4496-82c7-2beb5c556c78" class="bulleted-list"><li style="list-style-type:disc">web application</li></ul><ul id="d6a1889b-b63c-4154-acdd-a3b2c054b595" class="bulleted-list"><li style="list-style-type:disc">dashboards</li></ul><ul id="f674bfaa-bcfb-42fa-8413-8cb991f7af5a" class="bulleted-list"><li style="list-style-type:disc">Internet of Things (IoT) solutions</li></ul><ul id="83b9e059-1c79-4d1e-a2c2-facbe19f175e" class="bulleted-list"><li style="list-style-type:disc">Computer Vision</li></ul><ul id="ccf169b3-9087-42cf-9ea8-6af117ae8cd0" class="bulleted-list"><li style="list-style-type:disc">Natural Language Processing</li></ul><p id="2b5f200b-1ecf-4626-a2c6-00821cda039c" class="">Our team consists of experienced teachers, graduates and doctoral students of SDU. Also, university graduates with extensive development experience consult and supervise the Technopark in product development. Undergraduate students can gain industrial experience in software development by joining Technopark software team.</p></div></p></details></li></ul><ul id="ea1593c8-9dcb-45f5-b4e8-6b195a2bf3a3" class="toggle"><li><details open=""><summary>KZ</summary><p id="1eac4356-04aa-4b5d-8547-b9c640007899" class="">Технопарк командасы бизнес үшін шешімдер мен өнімдерді ұсынады, мысалы:<div class="indented"><ul id="a52bd114-720c-4207-acf2-b3b6e4716264" class="bulleted-list"><li style="list-style-type:disc">мобильді қосымша</li></ul><ul id="1d2d45a4-8883-4f67-9cce-68975b7e70d0" class="bulleted-list"><li style="list-style-type:disc">веб қосымша</li></ul><ul id="a722d084-b59a-4acf-a119-6d78d50c8be8" class="bulleted-list"><li style="list-style-type:disc">Internet of Things (IoT) шешімдер</li></ul><ul id="67ba5ef1-23e4-47df-9801-ee83df9595bc" class="bulleted-list"><li style="list-style-type:disc">Computer Vision</li></ul><ul id="c34ad821-1686-41b9-916c-9ba1f5f9bd4a" class="bulleted-list"><li style="list-style-type:disc">Natural Langiage Processing</li></ul><p id="7afa8b40-0b85-4a93-b951-360e287f477a" class="">Біздің команда тәжірибелі оқытушылардан, магистранттардан және SDU докторанттарынан тұрады. Сондай-ақ, даму тәжірибесі мол университет түлектері технопаркке өнімді әзірлеуде кеңес береді және жетекшілік етеді.</p><p id="d065180a-7e01-40d7-9c6c-1002084f3f4b" class="">Бакалавриат студенттері Технопарк командасына қосылу арқылы өндірістік бағдарламалық жасақтама тәжірибесін ала алады.</p></div></p></details></li></ul></details></li></ul><ul id="6393bada-35b1-458c-b9e9-f893e8bbe3b9" class="toggle"><li><details open=""><summary>Хардвейр</summary><ul id="e8466e94-5abe-4b98-be24-1a622973af06" class="toggle"><li><details open=""><summary>RU</summary><p id="ef3373b9-e405-40e9-8b67-4c603379e2ea" class="">IoT lab<div class="indented"><p id="776bcffc-8cce-4290-8693-898de9a2bf5a" class="">Основная деятельность: научно-исследовательская и практическая лаборатория.</p><p id="f3b4009e-ce9c-4958-b95d-71379d56c471" class="">Лаборатория работает в направлениях:</p><ul id="f1fa293a-8868-4596-9a6c-845f85425a07" class="bulleted-list"><li style="list-style-type:disc">разработка IoT устройств.</li></ul><ul id="f23bb91e-322d-457a-8b85-206e7b0e13ce" class="bulleted-list"><li style="list-style-type:disc">изготовление прототипов.</li></ul><ul id="55348699-bfbb-4ae3-b56d-5b83492805d8" class="bulleted-list"><li style="list-style-type:disc">робототехника и электромеханика</li></ul><ul id="f6f4d6f4-635f-4ac2-bd9b-b44cd50acaf5" class="bulleted-list"><li style="list-style-type:disc">лазерные и фрезерные работы по материалам типа фанеры и акрила.</li></ul><ul id="602c7de0-2aa3-4ab1-8c0a-9d2cda03eb14" class="bulleted-list"><li style="list-style-type:disc">дроны и радиоуправляемые машины</li></ul><ul id="a95f09ce-a1e4-4f1d-ae56-71ad7150ce77" class="bulleted-list"><li style="list-style-type:disc">реализация частных проектов от сторонних организаций и предприятий касательно электронных устройств. Например: ремонт, настройка, сборка и изготовление электронных устройств.</li></ul><p id="cd4db674-dd18-4581-9633-561d531406ae" class="">Так же в задачи лаборатории входит развитие у студентов навыков и знаний по основам электроники и схемотехники, развитие инженерного мышления и умения решать сложные производственные задачи, например: администрирование нетворк сетей; выявлять и исправлять поломки электронных компонентов оборудования; проектировать и собирать электронные платы необходимого оборудования; разбираться и программировать микроконтроллеры и микропроцессоры систем автоматики.</p><p id="f143a4eb-bdbc-455a-bc57-69aba0d51a65" class="">Набор в группу ведется по приоритетной специальности ВТиПО (вычислительная техника и программное обеспечение) Инженерного Факультета. Специальности ИС (информационные системы) и все желающие получить вышеописанные навыки тоже допускаются в лабораторию.</p><p id="d9baae0f-160f-4e3f-ab9c-5727439a90fe" class="">Помимо обучения основам электроники, схемотехники и решения производственных задач, лаборатория занимается развитием научных проектов, участвует в различных городских и межвузовских мероприятиях.</p></div></p></details></li></ul><ul id="3782b1bb-5cb8-404b-be4b-7e649f771220" class="toggle"><li><details open=""><summary>EN</summary><p id="a33998a6-8b4b-4e0a-87a4-699e76ac3614" class="">IoT Lab<div class="indented"><p id="1002c2f0-2490-4736-b06b-c2141fd36061" class="">Main activity: research and practical laboratory.</p><p id="3ab6759e-eaf1-4411-b143-e5bcdb9ad24e" class="">The laboratory works in the following directions:</p><ul id="60c38bd5-9ffd-464b-ac42-b50749db6d18" class="bulleted-list"><li style="list-style-type:disc">development of IoT devices.</li></ul><ul id="d81abda0-bba3-43d7-ad49-ad991b321d7a" class="bulleted-list"><li style="list-style-type:disc">prototyping.</li></ul><ul id="ac9d3e45-db39-475c-9343-c867de4cccc4" class="bulleted-list"><li style="list-style-type:disc">robotics and electromechanics</li></ul><ul id="5355d2ad-f6a0-477b-8510-8641f00eed4b" class="bulleted-list"><li style="list-style-type:disc">laser and milling work on materials such as plywood and acrylic.</li></ul><ul id="1ba7baf4-a3f0-4441-8acb-720203afb84e" class="bulleted-list"><li style="list-style-type:disc">drones and radio-controlled cars</li></ul><ul id="0dd78650-f665-4eb0-b30f-f75b9aa6b7c4" class="bulleted-list"><li style="list-style-type:disc">implementation of private projects from third-party organizations and enterprises regarding electronic devices. For example: repair, adjustment, assembly and manufacture of electronic devices.</li></ul><p id="de017a0c-3657-4e51-b072-23ff96050c4a" class="">The laboratory also aims to develop students&#x27; skills and knowledge in the basics of electronics, engineering thinking and the ability to solve complex production problems. E.g., administration of network networks; identify and correct breakdowns of electronic components of equipment; design and assemble electronic boards of the necessary equipment; understand and program microcontrollers and microprocessors of automation systems.</p><p id="4c745555-7244-49b0-8bea-eaefe245b408" class="">During recruitment process the priority is given to students from Computer Science major of the Faculty of Engineering and Natural Sciences. Information Systems and other majors are also allowed to the laboratory.</p><p id="1e9f7e46-fd09-4efb-8ce3-57caafd2f419" class="">In addition to teaching the basics of electronics and solving production problems, the laboratory is engaged in the development of scientific projects, participates in various state and interuniversity events.</p></div></p></details></li></ul><ul id="12e0dc34-4c5c-48db-aed1-3b67db3a2fd7" class="toggle"><li><details open=""><summary>KZ</summary><p id="b44fccc1-0060-4641-91f2-9f9f14cc66df" class="">IoT lab<div class="indented"><p id="0affec07-40af-4038-b125-5f0e96cf1c4f" class="">Негізгі қызметі: ғылыми-зерттеу және тәжірибелік зертхана.</p><p id="6811f7eb-f3a7-45c8-9507-5c8b8c111c6a" class="">Зертхана бағыттар бойынша жұмыс істейді:</p><ul id="e97446cf-580a-4b34-9946-e1e91e03ff8d" class="bulleted-list"><li style="list-style-type:disc">IoT құрылғыларын әзірлеу.</li></ul><ul id="610ab6f5-2c30-4ab3-ac30-b3f08f305fe4" class="bulleted-list"><li style="list-style-type:disc">прототиптер жасау.</li></ul><ul id="856a6091-39dd-470e-abeb-75592f1f9fc2" class="bulleted-list"><li style="list-style-type:disc">робототехника және электромеханика</li></ul><ul id="9b983431-8c55-42eb-9774-b1e321798d02" class="bulleted-list"><li style="list-style-type:disc">фанера және акрил түріндегі материалдар бойынша лазерлік және фрезерлік жұмыстар.</li></ul><ul id="2fa5b428-43e4-49c7-b9d8-d6ff09adf552" class="bulleted-list"><li style="list-style-type:disc">дрондар және радиомен басқарылатын машиналар</li></ul><ul id="510fad00-90d4-431a-8377-44f22214f92d" class="bulleted-list"><li style="list-style-type:disc">электрондық құрылғыларға қатысты үшінші тарап ұйымдары мен кәсіпорындардың жеке жобаларын іске асыру. Мысалы: электрондық құрылғыларды жөндеу, баптау, құрастыру және жасау.</li></ul><p id="52006ce1-b780-40fd-a47e-3b7932ba7454" class="">Сондай-ақ, зертхананың міндеттеріне студенттердің электроника және схемотехника негіздері бойынша дағдылары мен білімдерін дамыту, инженерлік ойлауды дамыту және күрделі өндірістік міндеттерді шешу қабілеті кіреді, мысалы: желілік желілерді басқару; жабдықтың электрондық компоненттерінің бұзылуын анықтау және түзету; қажетті жабдықтың электрондық тақталарын жобалау және жинау; автоматика жүйелерінің микроконтроллерлері мен микропроцессорларын түсіну және бағдарламалау.</p><p id="d472b74c-7bd6-47a5-9263-2bb2a17488b5" class="">Топқа қабылдау инженерлік факультеттің ВТиПО (есептеу техникасы және бағдарламалық қамтамасыз ету) басым мамандығы бойынша жүргізіледі. АЖ мамандықтары (Ақпараттық жүйелер) және жоғарыда аталған дағдыларды алғысы келетіндердің барлығы да зертханаға жіберіледі.</p><p id="676c61a4-696c-4646-9f6e-38c959979df5" class="">Зертхана электроника, Схемотехника негіздерін оқытудан және өндірістік мәселелерді шешуден басқа, ғылыми жобаларды дамытумен айналысады, әртүрлі қалалық және университетаралық іс-шараларға қатысады.</p></div></p></details></li></ul></details></li></ul></details></li></ul></details></li></ul><ul id="bfe17f51-8eb7-4114-bc72-0639176d1bcd" class="toggle"><li><details open=""><summary>Сотрудничество (3)</summary><ul id="5860e2c1-3dcf-4de0-957c-31db84b487b0" class="toggle"><li><details open=""><summary>RU</summary><p id="f0d19207-091d-4505-9498-8c33a35abd37" class="">Студент-Стартап</p><p id="a5f15ce3-4cac-43ef-9d41-5a58a6d48dd2" class="">Технопарк дает студенту возможность учиться у экспертов, пробовать свои силы в проектах и решать реальные задачи. На выходе — опыт, свой продукт, или работа в ведущих IT-компаниях.</p><p id="eed81126-a414-446b-8d46-6cc7cf77b774" class="">Технопарк работает по принципу Pay It Forward: пользуясь инфраструктурой Технопарка бесплатно, студент обязуется «взять под крыло» новых резидентов и обучить навыкам, приобретенным здесь.</p><p id="a95389b0-982b-441f-8d46-2697600b193d" class="">Студент-Заказчик</p><p id="d7c15fe3-414a-4cd8-9c63-07f7ec929d52" class="">Технопарк реализует коммерческие Hardware и Software проекты под заказ. Проекты реализуются под чутким руководством опытных преподавателей Университета. Также, при необходимости, к проектам привлекаются специалисты с индустрии. Учитывая, что часть работы выполняется студентами, стоимость реализации проекта ниже рыночной.</p><p id="489cd58d-61af-45c1-bf69-2e55c2e3075d" class="">Инвестор</p><p id="ab805b6d-1417-4f3f-b9ff-67a8071d171d" class="">Физическое или юридическое лицо имеет возможность инвестировать как в сами стартапы, так и в развитие студентов. Сюда входит инвестирование в материальное обеспечение Технопарка (закупка оборудования, материалов), так и вложение в обучение студентов.</p><p id="1d6d1cc4-f5dc-47ae-b71a-a05391785f37" class="">Менторство</p><p id="160fcaf8-3964-4238-8f48-b288120996d0" class="">Выпускникам, представителям индустрии, кто считает, что ему чем поделиться и чему научить будущих специалистов, предлагаем программу менторства.</p><p id="58c9a6f7-d756-4ba1-922d-847096cb7ef1" class="">Менторинг — это больше, чем просто консультирование или передача опыта. Речь идет о расширении возможностей другого человека для определения его собственных проблем и целей, помощи в поиске путей их решения и достижения целей.</p><p id="eea2bd28-4e53-4cb1-9552-50cbd863094c" class="">Ментор — это человек, имеющий профессиональный и жизненный опыт и добровольно согласившийся помочь студенту развивать навыки и компетенции, устанавливать новые цели и искать способы их достижения.</p><p id="75e85c65-9803-4520-be44-9b1cf6abf2ef" class="">
+</p></details></li></ul><ul id="48c1580e-e20e-4173-867f-13007a865e25" class="toggle"><li><details open=""><summary>EN</summary><p id="c9f5bcf3-9bd6-426b-9655-d1d81b63ca8a" class="">Student-Startup</p><p id="1e49fbbe-0ab4-469d-a97b-aa346a6ba785" class="">Technopark gives students an opportunity to learn from experts, challenge their skills in industrial projects and solve real-world problems. The output is the experience, own product or a job in leading tech companies. Technopark works on the principle ‘Pay It Forward’. By using the infrastructure of Technopark for free, the student must ‘take under his wing’ a newcomer residents and teach them the skills acquired here.</p><p id="514f3b10-0806-4a8f-bc92-a2efe93eeb7a" class="">Student-Client</p><p id="1757bc15-4892-4782-8c6f-7298444fe687" class="">Technopark implements commercial Hardware and Software projects on order. Projects are implemented under the strict guidance of experienced teachers of the University. Also, if necessary, specialists from the industry are involved in projects. Given that part of the work is done by students, the cost of the project is below the market price.</p><p id="b73bc0c2-b6ec-4d66-a509-3c9eef36ffd3" class="">Investor</p><p id="f61f7bbb-cd0d-41e7-8051-a2883f21e47a" class="">An individual or legal entity has the opportunity to invest both in start-ups themselves and in the development of students. This includes investing in the material support of the Technopark (purchase of equipment, materials), as well as investing in student education.</p><p id="6f021f93-c3e3-41ea-99d5-d4c489cb5092" class="">Mentoring</p><p id="fdd5a60a-eabd-4c48-8961-5c62ca3fe5ca" class="">We offer a mentoring program for graduates and industry representatives who want to share and teach future professionals.<div class="indented"><p id="e5abfda2-3913-43be-bdef-24a2264eb7d9" class="">Mentoring is more than just counseling or sharing a live experience. It is about empowering another person to identify their own problems and goals, helping them to find ways to solve them and achieve goals.</p><p id="1004e9fd-0c03-416f-84b9-6287760322b9" class="">A mentor is a person who has professional and life experience and who voluntarily agreed to help a student develop skills and competencies, set new goals and look for ways to achieve them.</p></div></p><p id="e87c3b92-d8d1-4d79-bea6-f6cb7196915d" class="">
+</p></details></li></ul><ul id="2a918e15-7adb-494d-ab01-c17a39d0eaa2" class="toggle"><li><details open=""><summary>KZ</summary><p id="e1d888fb-8302-4178-b976-2024645e3d51" class="">Студент-Стартап</p><p id="0c9fcbb0-dbd4-490a-ab65-7a3de8baf3d5" class="">Технопарк студентке сарапшылардан үйренуге, жобаларда өз күштерін сынап көруге және нақты мәселелерді шешуге мүмкіндік береді. Шығу-тәжірибе, сіздің өніміңіз немесе жетекші IT-компанияларда жұмыс істеу. Технопарк Pay It Forward қағидаты бойынша жұмыс істейді: технопарктің инфрақұрылымын тегін пайдалана отырып, студент жаңа резиденттерді &quot;қанатының астына алуға&quot; және осы жерден алған дағдыларын үйретуге міндеттенеді.</p><p id="d5010738-3588-4944-b58c-9e89965ee9ff" class="">Студент-Тапсырыс Беруші</p><p id="ab137206-0f53-4025-b3d3-05db05be058a" class="">Технопарк коммерциялық Hardware және Software жобаларын тапсырыспен жүзеге асырады. Жобалар университеттің тәжірибелі оқытушыларының басшылығымен жүзеге асырылады. Сондай-ақ, қажет болған жағдайда жобаларға Индустрия мамандары тартылады. Жұмыстың бір бөлігін студенттер орындайтынын ескере отырып, жобаны іске асыру құны нарықтан төмен.</p><p id="7444fba8-67e4-4284-a29c-e081f925edef" class="">Инвестор</p><p id="22b7001d-f9fe-440c-9533-022bebabbaf2" class="">Жеке немесе заңды тұлғаның стартаптарға да, студенттердің дамуына да инвестициялау мүмкіндігі бар. Бұған технопаркті материалдық қамтамасыз етуге инвестициялау (жабдықтар, материалдар сатып алу) және студенттерді оқытуға инвестициялау кіреді.</p><p id="3e1832ce-f68d-4283-96a4-4a04197cc4f3" class="">Тәлімгерлік</p><p id="57505795-6192-4e1a-91f4-28c6754df7af" class="">Түлектерге, сала өкілдеріне, оған бөлісетін және болашақ мамандарға үйрететін нәрсе деп санайтындар, менторлық бағдарламасын ұсынамыз. Менторинг-бұл тек кеңес беру немесе тәжірибе беру ғана емес. Бұл өз проблемалары мен мақсаттарын анықтау, оларды шешу жолдарын табуға және мақсаттарға жетуге көмектесу үшін басқа адамның мүмкіндіктерін кеңейту туралы.Тәлімгер-бұл кәсіби және өмірлік тәжірибесі бар және студенттің дағдылары мен құзыреттіліктерін дамытуға, жаңа мақсаттар қоюға және оларға жету жолдарын іздеуге көмектесуге ерікті түрде келіскен адам.</p></details></li></ul></details></li></ul><ul id="f297989c-6b3b-4c4a-93e1-c62b6e0346b2" class="toggle"><li><details open=""><summary>О нас (1)</summary><ul id="88ec9f18-6105-41b6-bb69-305eac51d6d8" class="toggle"><li><details open=""><summary>RU</summary><p id="fc9b5c14-1ebe-4c9c-b5ca-4563f7b7f385" class="">Наша миссия</p><p id="a641ba81-e76f-4920-9eaa-cf9bd82e144c" class="">Миссия Технопарка - трансформировать сообщество СДУ в комьюнити предпринимателей, где каждый вне зависимости от своих скиллов и идей будет иметь возможность реализовать свои проекты и довести их до конечного продукта.</p><p id="57a19914-fcea-4887-b9bc-8a59e3ebc698" class="">Наша команда:</p><p id="39e5044a-683e-46c6-af33-15b2efb13683" class="">Команда Технопарка состоит из наставников, имеющих индустриальный и/или исследовательский опыт. Это преподаватели СДУ, студенты с опытом участия в проектах, эксперты из индустрии.<div class="indented"><p id="674f0ee9-98e7-445a-a469-0172cd992071" class="">
+</p></div></p></details></li></ul><ul id="ddf5cc60-dbb1-41dd-ba38-d0f358ba805e" class="toggle"><li><details open=""><summary>EN</summary><p id="e90d83bf-bca0-423c-8f31-70eab2563a20" class="">Our mission</p><p id="59a5f716-d85a-428c-bc18-2aea34b49f13" class="">The mission of the Technopark is to transform the SDU community into a community of entrepreneurs, where everyone, regardless of their skills and ideas, will have the opportunity to implement their projects and bring them to the final product.</p><p id="133e301b-f25d-4a44-8a85-1fd01594cc69" class="">Our team:</p><p id="61fd41c7-19c2-4e81-a9a3-2c304157b567" class="">The Technopark team consists of mentors with industrial and/or research experience. These are SDU teachers, students with experience in participating in projects, industry experts.</p></details></li></ul><ul id="ff091aa0-7ed1-4911-b4e2-a755475bbd67" class="toggle"><li><details open=""><summary>KZ</summary><p id="0516f7da-3dc1-4eef-8c0c-25ad4ea330e0" class="">Біздің миссиямыз </p><p id="8c122e0a-98be-4ac0-8180-3e250cbf9e6b" class="">Технопарктің миссиясы- СДУ қауымдастығын кәсіпкерлер қауымдастығына айналдыру, мұнда әркім өз беткейлері мен идеяларына қарамастан өз жобаларын жүзеге асырып, оларды түпкілікті өнімге жеткізе алады.</p><p id="9424b828-f8c9-45e8-9f72-12eff87f4507" class="">Біздің команда:</p><p id="b0acceff-f262-4dc4-b1a1-4af3fa801f30" class="">Технопарк командасы өндірістік және/немесе зерттеу тәжірибесі бар тәлімгерлерден тұрады. Бұл СДУ оқытушылары, жобаларға қатысу тәжірибесі бар студенттер, сала сарапшылары.</p></details></li></ul></details></li></ul><ul id="cd28d53f-ced9-4b0c-bc5d-08af7f43841a" class="toggle"><li><details open=""><summary>FAQ (5)</summary><ul id="c4a73fbc-d4bf-49d5-a881-fda34b6a027c" class="toggle"><li><details open=""><summary>RU</summary><ul id="5d316e7c-8756-47b7-b2b2-cf187cd23ccc" class="bulleted-list"><li style="list-style-type:disc">Я не умею программировать, могу ли я присоединиться к Технопарку?<ul id="a283431d-4920-4a0a-bd90-cb21af362a52" class="bulleted-list"><li style="list-style-type:circle">Да, Технопарк открыт для всех, кто готов учиться.</li></ul></li></ul><ul id="eade7826-8e17-419c-9f9b-b06ed987648b" class="bulleted-list"><li style="list-style-type:disc">Обучаете ли вы программированию?<ul id="55abe3ba-6b16-447d-b8c0-6a9012da27e8" class="bulleted-list"><li style="list-style-type:circle">Каждый год мы набираем новых ассистентов, для которых проводим курс по Ардуино, где вы сможете ознакомиться с основами программирования и работы с микроконтроллерами.</li></ul></li></ul><ul id="94a484f3-96a8-43f1-a984-20ea9396e10b" class="bulleted-list"><li style="list-style-type:disc">У меня есть идея для проекта, могу ли я ее реализовать в рамках Технопарка?<ul id="1a50902a-3902-4283-ace8-01d80d9b7c51" class="bulleted-list"><li style="list-style-type:circle">Да, Технопарк предоставляет ресурсы для реализации ваших идей.</li></ul></li></ul><ul id="64b2050f-ae19-4a6c-8f05-0529f9aa64f3" class="bulleted-list"><li style="list-style-type:disc">Могу ли я найти ментора для проекта?<ul id="b0bb91f0-c2dd-476f-b186-4e9d12a2a923" class="bulleted-list"><li style="list-style-type:circle">Да, в Технопарке работают наши преподаватели, эксперты из индустрии, стуженты магистратуры и докторантуры, кто готов помочь вам.</li></ul></li></ul><ul id="ce9f29f9-abc2-40ef-9608-e2bf5de2a96f" class="bulleted-list"><li style="list-style-type:disc">Я выпускник СДУ, хочу внести вклад в Технпарк, что я могу сделать?<ul id="f48ee6cd-1993-4bdd-a1ef-08fb96d352a6" class="bulleted-list"><li style="list-style-type:circle">Вы можете курировать проекты, стать ментором, выступить на митапах для студентов.</li></ul></li></ul></details></li></ul><ul id="b77b51af-69de-4a2f-80e9-8a95e1483c25" class="toggle"><li><details open=""><summary>EN</summary><ul id="2ba862a2-fcaf-4d73-84e1-aa07236d13c6" class="bulleted-list"><li style="list-style-type:disc">I don&#x27;t know how to code, can I join the Technopark?<ul id="37454ce3-7cc2-4b90-8cea-1d5cbe515a70" class="bulleted-list"><li style="list-style-type:circle">Yes, the Technopark is open for everyone who is ready to learn.</li></ul></li></ul><ul id="4bcd2784-7f0f-412a-9cf0-53f77ce81a4c" class="bulleted-list"><li style="list-style-type:disc">Do you teach programming?<ul id="0675a17c-2870-4c11-b694-23be30f258d0" class="bulleted-list"><li style="list-style-type:circle">Every year we recruit new assistants, for whom we conduct an Arduino course, where you can get acquainted with the basics of programming and working with microcontrollers.</li></ul></li></ul><ul id="a90a9138-3385-4201-815c-0bd5ce388ddd" class="bulleted-list"><li style="list-style-type:disc">I have an idea for a project, can I implement it within the Technopark?<ul id="b3118a18-d6f8-4475-8474-fbc1cdd0b689" class="bulleted-list"><li style="list-style-type:circle">Yes, Technopark provides resources to implement your ideas.</li></ul></li></ul><ul id="56d14ad6-0319-4339-aeb3-595dcf5dfecb" class="bulleted-list"><li style="list-style-type:disc">Can I find a mentor for the project?<ul id="c2af54b4-632a-41bf-a1ed-66c5faa06269" class="bulleted-list"><li style="list-style-type:circle">Yes, Technopark employs our lecturers, industry experts, and master and doctoral students who are ready to help you.</li></ul></li></ul><ul id="c73486e1-c5c4-4f0b-bc04-0df58c2c941b" class="bulleted-list"><li style="list-style-type:disc">I am a SDU graduate, I want to contribute to the Technpark, what can I do?<ul id="3a112c25-3d45-4159-a2e6-826f397decb4" class="bulleted-list"><li style="list-style-type:circle">You can supervise projects, become a mentor, and speak at meetups for students.</li></ul></li></ul></details></li></ul><ul id="c9b9830f-0740-49ea-b4ff-ab8ab4bf17c4" class="toggle"><li><details open=""><summary>KZ</summary><ul id="ea050888-be90-480b-93de-490033508bd8" class="bulleted-list"><li style="list-style-type:disc">Мен бағдарламалауды білмеймін, технопаркке қосыла аламын ба?<ul id="2a785995-0d27-41b0-b0f9-a8170be97c03" class="bulleted-list"><li style="list-style-type:circle">Иә, Технопарк оқуға дайын кез келген адам үшін ашық.</li></ul></li></ul><ul id="f9c0e497-5e6e-4cfd-b45c-92829e7e6f04" class="bulleted-list"><li style="list-style-type:disc">Сіз бағдарламалауды үйретесіз бе?<ul id="639a0b24-e304-4756-b6d2-7ba55f019609" class="bulleted-list"><li style="list-style-type:circle">Жыл сайын біз Ардуино курсын өткізетін жаңа көмекшілерді жалдаймыз, онда сіз бағдарламалау негіздерімен және микроконтроллерлермен жұмыс жасай аласыз.</li></ul></li></ul><ul id="465dc6c2-2b06-4cd8-8a57-9ef48ba2cfe0" class="bulleted-list"><li style="list-style-type:disc">Менде жоба туралы идея бар, оны Технопарк аясында жүзеге асыра аламын ба?<ul id="3b752093-3251-4f57-81db-13e66f4c61b9" class="bulleted-list"><li style="list-style-type:circle">Иә, Технопарк сіздің идеяларыңызды жүзеге асыру үшін ресурстар ұсынады.</li></ul></li></ul><ul id="4edfd652-1433-4765-a0f8-415f0cf41db7" class="bulleted-list"><li style="list-style-type:disc">Мен жоба үшін тәлімгер таба аламын ба?<ul id="bf5bd3c2-f015-42d5-a67c-ab029892d4ab" class="bulleted-list"><li style="list-style-type:circle">Иә, технопаркте біздің оқытушылар, сала мамандары, магистратура және докторантура студенттері жұмыс істейді, олар сізге көмектесуге дайын.</li></ul></li></ul><ul id="f2500c16-e57f-45d3-b83a-bcd4ec09183b" class="bulleted-list"><li style="list-style-type:disc">Мен бітіремін, технопаркке үлес қосқым келеді, Мен не істей аламын?<ul id="6cbc6d27-1f05-4421-ad77-7396400ae94e" class="bulleted-list"><li style="list-style-type:circle">Сіз жобаларды басқара аласыз, тәлімгер бола аласыз, студенттерге арналған митаптарда сөйлей аласыз.</li></ul></li></ul></details></li></ul></details></li></ul><p id="a5bd1c2f-b82f-4d6b-b0a2-d50ddde3da56" class="">
+</p></div></article></body></html>

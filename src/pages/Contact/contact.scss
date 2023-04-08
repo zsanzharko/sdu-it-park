@@ -1,0 +1,206 @@
+@import "../../components/const/colors.scss";
+
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 200;
+    src: url(../../assets/fonts/Roboto/Roboto-Thin.ttf);
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 300;
+    src: url(../../assets/fonts/Roboto/Roboto-Light.ttf);
+}
+
+.largest-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 93px;
+    background-image: url("../../assets/images/sss.png");
+}
+
+.lecturer-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 156px;
+    
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+
+    .sdu-in-google{
+        display: flex;            
+        justify-content: center;
+    }
+
+    .contact-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 18px;
+
+        .people-contacts {
+            position: relative;
+            width: 690px;
+            height: 352px;
+            background: #FFFFFF;
+            mix-blend-mode: normal;
+            border-radius: 13px;
+            overflow-x: hidden;
+
+            .people-contacts__button {
+                position: absolute;
+                z-index: 3;
+                top: calc(50% - 32px);
+                font-size: 64px;
+                color: #4a4a4a;
+                background: none;
+                border: none;
+                cursor: pointer;
+
+                &:disabled {
+                    color: rgba(74, 74, 74, 0.5);
+                    cursor: auto;
+                }
+
+                &.left {
+                    left: 45px;
+                }
+
+                &.right {
+                    right: 45px;
+                }
+            }
+
+            .people-contacts__slider {
+                width: calc(3 * 690px);
+                height: 100%;
+                display: flex;
+                flex-direction: row;
+                transition: all 0.4s ease-in-out;
+
+                .people-contacts__slide {
+                    position: relative;
+                    z-index: 1;
+                    width: 690px;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+
+                    > img {
+                        width: 153px;
+                        border-radius: 50%;
+                        margin-bottom: 20px;
+                    }
+
+                    > h2 {
+                        font-family: 'Roboto', sans-serif;
+                        font-weight: 400;
+                        font-size: 32px;
+                        letter-spacing: 0.05em;                      
+                        color: #072A6D;
+                    }
+
+                    > p {
+                        font-family: 'Roboto', sans-serif;
+                        font-weight: 400;
+                        font-size: 20px;
+                        letter-spacing: 0.05em;                      
+                        color: #072A6D;
+                    }
+                }
+            }
+        }
+    
+        .address-cont{
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            
+            width: 690px;
+            height: 266px;
+            background: rgba(0, 0, 0, 0.22);
+            box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
+            border-radius: 20px;
+            padding: 50px 0;
+
+            .detailed-address {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-end;
+
+                > p {
+                    font-family: 'Roboto', sans-serif;
+                    font-weight: 300;
+                    font-size: 24px;
+                    line-height: 171.69%;
+
+                    color: #FFFFFF;
+                    text-align: center;
+                    max-width: 90%;
+                }
+            }
+
+            .detail-container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                gap: 50px;
+
+                .where-to-find {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 30px;
+
+                    > p {
+                        font-family: 'Roboto', sans-serif;
+                        font-weight: 300;
+                        font-size: 24px;
+                        line-height: 171.69%;
+    
+                        color: #FFFFFF;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.outer-container{
+    display: flex;
+    width: 757px;
+    height: 95px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 60px;
+    .inner-container{
+        display: flex;
+        width: 648px;
+        height: 100%;
+        border-radius: 66px;
+        align-items: center;
+        justify-content: center;
+        >p{
+            font-family: 'Roboto', sans-serif;
+            font-style: normal;
+            font-weight: 200;
+
+            font-size: 96px;
+        
+            text-align: justify;
+            color: $lightness-color;
+        }
+    }
+}

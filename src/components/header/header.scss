@@ -1,0 +1,55 @@
+@import "../const/colors.scss";
+
+.main-nav {
+    background-color: white;
+    overflow: visible;
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 3vw;
+
+    a {
+        position: relative;
+        font-family: 'Roboto', serif;
+        font-style: normal;
+        font-weight: 350;
+        font-size: 20px;
+        text-align: center;
+        text-decoration: none;
+        color: #474747;
+    }
+
+    a.page-link::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 1.5px;
+        bottom: 0;
+        left: 0;
+        background-color: #474747;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
+
+    a.page-link:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+
+    .header-logo {
+        cursor: pointer;
+        img {
+            width: auto;
+            height: 2em;
+        }
+    }
+
+    li {
+        display: inline-block;
+        padding: 0 50px;
+    }
+}
