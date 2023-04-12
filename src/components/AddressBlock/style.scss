@@ -1,0 +1,16 @@
+.address-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+
+  > p {
+    font-family: var(--font);
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 171.69%;
+    color: #FFFFFF;
+    text-align: center;
+    max-width: 90%;
+  }
+}

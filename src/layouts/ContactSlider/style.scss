@@ -1,0 +1,41 @@
+.contact-slider {
+  position: relative;
+  width: 690px;
+  height: 352px;
+  background: #ffffff;
+  mix-blend-mode: normal;
+  border-radius: 13px;
+  overflow-x: hidden;
+}
+
+.contact-slider__button {
+  position: absolute;
+  z-index: 3;
+  top: calc(50% - 32px);
+  font-size: 64px;
+  color: #4a4a4a;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  &:disabled {
+    color: rgba(74, 74, 74, 0.5);
+    cursor: auto;
+  }
+
+  &-left {
+    left: 45px;
+  }
+
+  &-right {
+    right: 45px;
+  }
+}
+
+.contact-slider__container {
+  width: calc(3 * 690px);
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  transition: all 0.4s ease-in-out;
+}

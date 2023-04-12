@@ -1,0 +1,24 @@
+.contact-page {
+  width: 100%;
+  padding: 40px 0 93px;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  background-image: url("../../assets/images/sss.png");
+}
+
+.contact-page__container {
+  width: 100%;
+  margin-top: 24px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  gap: 18px;
+}
+
+.contact-page__container-contacts {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  gap: 18px;
+}
