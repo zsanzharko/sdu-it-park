@@ -7,9 +7,9 @@ export interface IContactSlide {
 }
 
 export interface IContactsBlock {
-  address: string;
-  room: string;
-  number: string;
+  locationPlace: string;
+  sectionPlace: string;
+  phoneNumberLocation: string;
 }
 
 export interface ITeamSlide {

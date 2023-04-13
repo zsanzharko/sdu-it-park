@@ -14,13 +14,19 @@ interface ILinks {
   url: string;
   email: string;
   phoneNumber: string;
+  instagram: string;
+  facebook: string;
+  linkedIn: string;
 }
 
 export const Footer: React.FC = () => {
-  const initialLinks = {
+  const initialLinks: ILinks = {
     url: 'www.techopark.sdu.edu.kz',
     phoneNumber: '+7 (727) 307 95 65',
     email: 'technopark@sdu.edu.kz',
+    instagram: 'www.instagram.com',
+    facebook: 'www.facebook.com',
+    linkedIn: 'www.linkedin.com',
   };
   const [links, setLinks] = useState<ILinks>(initialLinks);
 
@@ -41,13 +47,13 @@ export const Footer: React.FC = () => {
       <div className="footer__icons">
         <Logo />
         <div className="footer__icons-wrapper">
-          <Link to="/">
+          <Link to={links.facebook}>
             <FacebookIcon />
           </Link>
-          <Link to="/">
+          <Link to={links.instagram}>
             <InstagramIcon />
           </Link>
-          <Link to="/">
+          <Link to={links.linkedIn}>
             <LinkedinIcon />
           </Link>
         </div>
