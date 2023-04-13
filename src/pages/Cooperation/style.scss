@@ -1,0 +1,26 @@
+.cooperation-page {
+  position: relative;
+  width: 100%;
+  padding: 8rem 0 10rem;
+  background: var(--main-blue);
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cooperation-page__wrapper {
+  position: relative;
+  width: 1152px;
+  overflow: hidden;
+}
+
+.cooperation-page__iframe {
+  position: absolute;
+  top: 1500px;
+  height: 100%;
+  width: 100%;
+  transform: scale(1.8);
+  border: none;
+}

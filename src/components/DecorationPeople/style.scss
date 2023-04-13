@@ -1,0 +1,30 @@
+.decoration-people {
+  margin-top: 50px;
+  width: max-content;
+}
+
+.decoration-people__circle {
+  z-index: 0;
+  position: absolute;
+  border: 140px solid #072A6D;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.decoration-people__circle-outer {
+  height: 806px;
+  width: 806px;
+}
+
+.decoration-people__circle-inner {
+  height: 306px;
+  width: 306px;
+  background: #072A6D;
+}
+
+.decoration-people__image {
+  position: relative;
+  z-index: 1;
+}

@@ -1,0 +1,56 @@
+.our-team {
+  position: relative;
+  padding-top: 40px;
+  width: 100%;
+  height: max-content;
+  padding-bottom: 100px;
+  overflow: hidden;
+
+  > .page-title {
+    color: #000;
+  }
+}
+
+.our-team__buttons-container {
+  padding: 3px;
+  width: max-content;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 80px;
+  background: #072A6D;
+  border-radius: 40px;
+}
+
+.our-team__button {
+  width: 365px;
+  height: 61px;
+  border: none;
+  border-radius: 40px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 36px;
+  color: #fff;
+  background: #072A6D;
+
+  &:disabled {
+    color: #474747;
+    background: #fff;
+  }
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+.our-team__text {
+  padding: 53px 264px 0;
+  font-family: var(--font);
+  font-weight: 300;
+  font-size: 36px;
+  color: #474747;
+  text-align: center;
+}

@@ -1,0 +1,32 @@
+.decoration-mountain {
+  z-index: 0;
+  position: relative;
+  width: inherit;
+  height: 352px;
+  background: url(../../assets/images/background-decoration.png), rgba(0, 0, 0, 0.25);
+  background-size: 200%;
+  background-position: 40% 30%;
+  border-radius: 20px;
+  overflow: hidden;
+
+  &__circle {
+    z-index: 0;
+    position: absolute;
+    top: 5%;
+    left: 17%;
+  }
+
+  &__wheel {
+    z-index: 0;
+    position: absolute;
+    top: 16.7%;
+    left: 20.7%;
+  }
+
+  &__mountains {
+    z-index: 2;
+    position: absolute;
+    top: -3rem;
+    width: 100%;
+  }
+}

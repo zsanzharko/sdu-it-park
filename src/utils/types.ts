@@ -11,3 +11,10 @@ export interface IContactsBlock {
   room: string;
   number: string;
 }
+
+export interface ITeamSlide {
+  id: number;
+  type: 'STUDENT' | 'EMPLOYEE';
+  photo: string;
+  fullName: string;
+}

@@ -17,12 +17,19 @@ interface ILinks {
 }
 
 export const Footer: React.FC = () => {
-  const [links, setLinks] = useState<ILinks>();
+  const initialLinks = {
+    url: 'www.techopark.sdu.edu.kz',
+    phoneNumber: '+7 (727) 307 95 65',
+    email: 'technopark@sdu.edu.kz',
+  };
+  const [links, setLinks] = useState<ILinks>(initialLinks);
+
   const fetchLinks = async () => {
-    const res = await fetch(
-      'http://cors-anywhere.herokuapp.com/http://185.4.180.23:8000/api/v1/general/website'
-    ).then((r) => (r.ok ? r.json() : { data: { url: '', phoneNumber: '', email: '' } }));
-    setLinks(res.data);
+    const res = await fetch('http://185.4.180.23:8000/api/v1/general/website');
+    if (res.ok) {
+      const data = await res.json();
+      setLinks(data);
+    }
   };
 
   useEffect(() => {
@@ -34,13 +41,13 @@ export const Footer: React.FC = () => {
       <div className="footer__icons">
         <Logo />
         <div className="footer__icons-wrapper">
-          <Link to={links?.url || '/'}>
+          <Link to="/">
             <FacebookIcon />
           </Link>
-          <Link to={links?.url || '/'}>
+          <Link to="/">
             <InstagramIcon />
           </Link>
-          <Link to={links?.url || '/'}>
+          <Link to="/">
             <LinkedinIcon />
           </Link>
         </div>
@@ -49,24 +56,18 @@ export const Footer: React.FC = () => {
       <div className="footer__contacts">
         <div className="footer__contacts-wrapper">
           <p className="footer__contacts-text">Нужна помощь? Свяжитесь с нами:</p>
-          <Link to={links?.phoneNumber || '/'} className="footer__contacts-text">
-            {links?.phoneNumber || '+7 (727) 307 95 65'}
+          <Link to="/" className="footer__contacts-text">
+            {links?.phoneNumber}
           </Link>
         </div>
         <div className="footer__contacts-wrapper">
-          <Link
-            to={links?.url || '/'}
-            className="footer__contacts-text footer__contacts-text-small"
-          >
+          <Link to="/" className="footer__contacts-text footer__contacts-text-small">
             <img src={earth} alt="earth icon" />
-            {links?.url || 'www.techopark.sdu.edu.kz'}
+            {links?.url}
           </Link>
-          <Link
-            to={links?.email || 'https://mail.google.com'}
-            className="footer__contacts-text footer__contacts-text-small"
-          >
+          <Link to="/" className="footer__contacts-text footer__contacts-text-small">
             <img src={letter} alt="earth icon" />
-            {links?.email || 'technopark@sdu.edu.kz'}
+            {links?.email}
           </Link>
         </div>
       </div>
