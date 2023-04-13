@@ -35,9 +35,20 @@
     transition: transform 0.25s ease-out;
   }
 
-  &:hover::after {
+  &:hover::after{
     transform: scaleX(1);
     transform-origin: bottom left;
+  }
+
+  &.header__link-active::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1.5px;
+    bottom: 0;
+    left: 0;
+    background-color: #474747;
+    transform: scaleX(1);
   }
 }
 
