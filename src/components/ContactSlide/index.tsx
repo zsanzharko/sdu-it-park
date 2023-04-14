@@ -1,13 +1,18 @@
 import { IContactSlide } from '../../utils/types';
 import './style.scss';
 
-export const ContactSlide: React.FC<IContactSlide> = ({ url, name, role, mobile }) => {
+export const ContactSlide: React.FC<IContactSlide> = ({
+  photo,
+  phoneNumber,
+  fullName,
+  position,
+}) => {
   return (
     <div className="contact-slide">
-      <img src={url} alt="" />
-      <h2>{name}</h2>
-      <p>{role}</p>
-      <p>{mobile}</p>
+      <img src={photo[0]} alt="" />
+      <h2>{fullName}</h2>
+      <p>{position}</p>
+      <p>{phoneNumber}</p>
     </div>
   );
 };

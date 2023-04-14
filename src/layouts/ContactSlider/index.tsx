@@ -1,29 +1,35 @@
 import { useEffect, useState } from 'react';
 
-import { variables } from './index.contacts';
 import { ContactSlide } from '../../components/ContactSlide';
 import { IContactSlide } from '../../utils/types';
+import { LoadingIcon } from '../../assets/icons/LoadingIcon';
 
 import './style.scss';
 
 export const ContactSlider: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [people, setPeople] = useState<Array<IContactSlide>>([]);
-  const { length } = people;
+
+  const fetchData = async () => {
+    const res = await fetch('http://185.4.180.23:8000/api/v1/contacts');
+    if (res.ok) {
+      const data = await res.json();
+      setPeople(data);
+    }
+  };
 
   useEffect(() => {
-    // TODO: add fetch request to get people
-    setPeople(variables);
+    fetchData();
   }, []);
 
   const goToPrev = () => {
     const index = currentIndex - 1;
-    setCurrentIndex(index < 0 ? length - 1 : index);
+    setCurrentIndex(index < 0 ? people.length - 1 : index);
   };
 
   const goToNext = () => {
     const index = currentIndex + 1;
-    setCurrentIndex(index === length ? 0 : index);
+    setCurrentIndex(index === people.length ? 0 : index);
   };
 
   return (
@@ -40,7 +46,7 @@ export const ContactSlider: React.FC = () => {
         type="button"
         className="contact-slider__button contact-slider__button-right"
         onClick={goToNext}
-        disabled={currentIndex === length - 1}
+        disabled={currentIndex >= people.length - 1}
       >
         ❯
       </button>
@@ -48,9 +54,13 @@ export const ContactSlider: React.FC = () => {
         className="contact-slider__container"
         style={{ transform: `translateX(-${currentIndex * 690}px)` }}
       >
-        {people.map((person) => {
-          return <ContactSlide key={person.id} {...person} />;
-        })}
+        {people.length > 0 ? (
+          people.map((person) => {
+            return <ContactSlide key={person.id} {...person} />;
+          })
+        ) : (
+          <LoadingIcon />
+        )}
       </div>
     </div>
   );

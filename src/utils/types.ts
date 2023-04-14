@@ -1,9 +1,10 @@
 export interface IContactSlide {
-  url: string;
-  name: string;
-  role: string;
-  mobile: string;
   id: number;
+  photo: string[];
+  fullName: string;
+  position: string;
+  phoneNumber: string;
+  email: string;
 }
 
 export interface IContactsBlock {
