@@ -3,8 +3,8 @@
   height: max-content;
   padding: 26px 50px 10px;
   display: grid;
-  grid-template-columns: 0.3fr 1fr;
-  align-items: start;
+  grid-template-columns: auto 1fr;
+  align-items: center;
 }
 
 .footer__icons {
@@ -21,7 +21,8 @@
 }
 
 .footer__contacts {
-  width: max-content;
+  justify-self: center;
+  width: 100%;
   display: flex;
   flex-flow: column wrap;
   gap: 10px;
@@ -30,7 +31,7 @@
 .footer__contacts-wrapper {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   gap: 20px;
 }
 
@@ -40,6 +41,7 @@
   font-size: 36px;
   color: var(--main-blue);
   text-decoration: none;
+  text-align: center;
 }
 
 .footer__contacts-text-small {
