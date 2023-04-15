@@ -1,6 +1,6 @@
 export interface IContactSlide {
   id: number;
-  photo: string[];
+  photo: string;
   fullName: string;
   position: string;
   phoneNumber: string;
@@ -18,4 +18,25 @@ export interface ITeamSlide {
   type: 'STUDENT' | 'EMPLOYEE';
   photo: string;
   fullName: string;
+}
+
+export interface IActualPagePost {
+  id: number;
+  title: string;
+  tags: {
+    id: number;
+    tagName: string;
+    postList: string[];
+  }[];
+  content: string;
+  createdDate: string;
+  creatorId: number;
+  comment: {
+    messageId: number;
+    repliedMessageId: number;
+    post: string;
+    text: string;
+    creatorId: number;
+    createdDate: string;
+  }[];
 }

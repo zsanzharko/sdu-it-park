@@ -1,0 +1,56 @@
+.actual-page {
+  position: relative;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  width: 100%;
+  padding: 40px 0 50px;
+  background: url('../../assets/images/sdu.png') bottom, #2f2f2f fixed repeat;
+  background-blend-mode: multiply;
+  background-size: cover, cover;
+  background-repeat: no-repeat;
+}
+
+.actual-page__wrapper {
+  width: 100%;
+  padding: 0 150px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.scroll-text {
+  padding: 30px 0 0;
+  font-family: var(--font);
+  font-weight: 300;
+  font-size: 16px;
+  color: rgba($color: #ffffff, $alpha: 0.8);
+  opacity: 0;
+  transition: all 0.2s linear 0.1s;
+  text-align: center;
+}
+
+.scroll-text__arrow {
+  transform: rotate(90deg) translate(12px, -3px);
+}
+
+.actual-page__wrapper-scroll {
+  position: absolute;
+  height: 100%;
+  width: 150px;
+  top: 0;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: all 0.2s linear 0s;
+
+  &:hover {
+    background-color: rgba($color: #626262, $alpha: 0.5);
+  }
+
+  &:hover > .scroll-text {
+    opacity: 1;
+  }
+}

@@ -9,7 +9,7 @@ export const ContactSlide: React.FC<IContactSlide> = ({
 }) => {
   return (
     <div className="contact-slide">
-      <img src={photo[0]} alt="" />
+      <img src={`data:image/jpg;base64,${photo}`} alt="" />
       <h2>{fullName}</h2>
       <p>{position}</p>
       <p>{phoneNumber}</p>
