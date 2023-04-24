@@ -1,8 +1,9 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useSelector } from 'react-redux';
 
-import { ITeamSlide } from '../../utils/types';
+import { IStore, ITeamSlide } from '../../utils/types';
 import { TeamSlide } from '../../components/TeamSlide';
 import { LoadingIcon } from '../../assets/icons/LoadingIcon';
 
@@ -17,6 +18,7 @@ export const TeamSlider: React.FC<ITeamSlider> = ({ type, slides }) => {
   const [people, setPeople] = useState(slides.filter((slide) => slide.type === type));
   const [activeSlide, setActiveSlide] = useState(0);
   const sliderRef = useRef<HTMLDivElement>(null);
+  const { pending } = useSelector((state: IStore) => state.aboutTeamData);
 
   const nextSlide = (n: number) => {
     return activeSlide + n > people.length - 1 ? n - 1 : activeSlide + n;
@@ -45,7 +47,7 @@ export const TeamSlider: React.FC<ITeamSlider> = ({ type, slides }) => {
   return (
     <div className="our-team__carousel">
       <div className="our-team__carousel__wrapper" ref={sliderRef} onClick={handleSliderClick}>
-        {slides.length > 0 ? (
+        {slides.length > 0 && !pending && (
           <>
             <TeamSlide key={0} active="left-second" {...people[prevSlide(2)]} />
             <TeamSlide key={1} active="left" {...people[prevSlide(1)]} />
@@ -53,9 +55,8 @@ export const TeamSlider: React.FC<ITeamSlider> = ({ type, slides }) => {
             <TeamSlide key={3} active="right" {...people[nextSlide(1)]} />
             <TeamSlide key={4} active="right-second" {...people[nextSlide(2)]} />
           </>
-        ) : (
-          <LoadingIcon />
         )}
+        {pending && <LoadingIcon />}
       </div>
     </div>
   );

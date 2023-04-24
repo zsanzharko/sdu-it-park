@@ -1,6 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
-import { IContactsBlock } from '../../utils/types';
+import { IStore } from '../../utils/types';
+import { useAppDispatch } from '../../store/store.dispath';
+import { fetchAddressesData } from '../../store/slices/contactsAddresses.slice';
 import { AddressBlock } from '../../components/AddressBlock';
 import { LocationIcon } from '../../assets/icons/LocationIcon';
 import { RoomIcon } from '../../assets/icons/RoomIcon';
@@ -9,31 +12,21 @@ import { PhoneIcon } from '../../assets/icons/PhoneIcon';
 import './style.scss';
 
 export const AddressContainer: React.FC = () => {
-  const initialContacts: IContactsBlock = {
-    locationPlace:
-      'Алматинская область, Kарасайский район. 040900, город Каскелен, ул. Абылай хана, 1/1',
-    sectionPlace: 'block 5, number 69',
-    phoneNumberLocation: '8777-777-77-77',
-  };
-  const [contacts, setContacts] = useState<IContactsBlock>(initialContacts);
-
-  const fetchData = async () => {
-    const res = await fetch('http://185.4.180.23:8000/api/v1/general/website/place');
-    if (res.ok) {
-      const data = await res.json();
-      setContacts(data);
-    }
-  };
+  const { addresses, isNew } = useSelector((state: IStore) => state.contactsAddressesData);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    if (isNew) {
+      dispatch(fetchAddressesData());
+    }
+  }, [dispatch, isNew]);
+
   return (
     <div className="address-container">
-      <AddressBlock text={contacts.locationPlace} image={<LocationIcon />} />
+      <AddressBlock text={addresses.locationPlace} image={<LocationIcon />} />
       <div className="address-container-small">
-        <AddressBlock text={contacts.sectionPlace} image={<RoomIcon />} />
-        <AddressBlock text={contacts.phoneNumberLocation} image={<PhoneIcon />} />
+        <AddressBlock text={addresses.sectionPlace} image={<RoomIcon />} />
+        <AddressBlock text={addresses.phoneNumberLocation} image={<PhoneIcon />} />
       </div>
     </div>
   );

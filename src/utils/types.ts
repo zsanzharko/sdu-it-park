@@ -40,3 +40,20 @@ export interface IActualPagePost {
     createdDate: string;
   }[];
 }
+
+export interface IStore {
+  contactsPeopleData: {
+    people: IContactSlide[];
+    pending: boolean;
+    isNew: boolean;
+  };
+  contactsAddressesData: {
+    addresses: IContactsBlock;
+    isNew: boolean;
+  };
+  aboutTeamData: {
+    team: ITeamSlide[];
+    isNew: boolean;
+    pending: boolean;
+  };
+}

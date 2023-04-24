@@ -31,10 +31,12 @@ export const Footer: React.FC = () => {
   const [links, setLinks] = useState<ILinks>(initialLinks);
 
   const fetchLinks = async () => {
-    const res = await fetch('http://185.4.180.23:8000/api/v1/general/website');
-    if (res.ok) {
+    try {
+      const res = await fetch('http://185.4.180.23:8000/api/v1/general/website');
       const data = await res.json();
       setLinks(data);
+    } catch (err) {
+      throw new Error();
     }
   };
 

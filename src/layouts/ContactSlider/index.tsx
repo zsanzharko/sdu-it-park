@@ -1,26 +1,24 @@
 import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
+import { useAppDispatch } from '../../store/store.dispath';
+import { fetchContactsData } from '../../store/slices/contactsPeople.slice';
 import { ContactSlide } from '../../components/ContactSlide';
-import { IContactSlide } from '../../utils/types';
+import { IStore } from '../../utils/types';
 import { LoadingIcon } from '../../assets/icons/LoadingIcon';
 
 import './style.scss';
 
 export const ContactSlider: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [people, setPeople] = useState<Array<IContactSlide>>([]);
-
-  const fetchData = async () => {
-    const res = await fetch('http://185.4.180.23:8000/api/v1/contacts');
-    if (res.ok) {
-      const data = await res.json();
-      setPeople(data);
-    }
-  };
+  const { people, pending, isNew } = useSelector((state: IStore) => state.contactsPeopleData);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    if (isNew) {
+      dispatch(fetchContactsData());
+    }
+  }, [dispatch, isNew]);
 
   const goToPrev = () => {
     const index = currentIndex - 1;
@@ -54,13 +52,12 @@ export const ContactSlider: React.FC = () => {
         className="contact-slider__container"
         style={{ transform: `translateX(-${currentIndex * 690}px)` }}
       >
-        {people.length > 0 ? (
+        {people.length > 0 &&
+          !pending &&
           people.map((person) => {
             return <ContactSlide key={person.id} {...person} />;
-          })
-        ) : (
-          <LoadingIcon />
-        )}
+          })}
+        {pending && <LoadingIcon />}
       </div>
     </div>
   );
