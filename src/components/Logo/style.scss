@@ -1,8 +1,13 @@
 .site-logo {
+  position: relative;
   overflow: hidden;
   cursor: pointer;
+  width: 130px;
+  height: 40px;
 
   > img {
-    width: 120px;
+    position: absolute;
+    left: -26px;
+    height: 33px;
   }
 }

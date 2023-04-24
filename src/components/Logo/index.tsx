@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import './style.scss';
 
-import logo from '../../assets/images/logo.png';
+import logo from '../../assets/icons/logo.svg';
 
 export const Logo: React.FC = () => {
   return (

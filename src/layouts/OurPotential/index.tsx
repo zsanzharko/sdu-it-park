@@ -13,7 +13,6 @@ export const OurPotential: React.FC = () => {
   return (
     <section className="our-potential">
       <div className="our-potential__block">
-        <Logo />
         <h2 className="our-potential__text">
           Раскроем <br /> потенциал вместе
         </h2>
