@@ -1,12 +1,15 @@
 .header {
+  position: relative;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 1fr;
   align-items: center;
   padding: 20px 35px;
 }
 
 .header__links {
+  position: absolute;
+  justify-self: center;
   display: flex;
   flex-flow: row wrap;
   gap: 50px;

@@ -18,6 +18,7 @@ const aboutTeamData = createSlice({
     builder
       .addCase(fetchAboutTeamData.pending, (state) => {
         state.pending = true;
+        state.isNew = false;
       })
       .addCase(fetchAboutTeamData.fulfilled, (state, action) => {
         state.team = action.payload;

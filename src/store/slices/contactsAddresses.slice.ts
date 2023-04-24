@@ -25,8 +25,8 @@ const contactsAddressesData = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchAddressesData.pending, () => {
-        // TODO: add pending state handler
+      .addCase(fetchAddressesData.pending, (state) => {
+        state.isNew = false;
       })
       .addCase(fetchAddressesData.fulfilled, (state, action) => {
         state.addresses = action.payload;

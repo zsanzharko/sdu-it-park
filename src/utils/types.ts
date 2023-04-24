@@ -22,13 +22,20 @@ export interface ITeamSlide {
 
 export interface IActualPagePost {
   id: number;
+  postPhotoList: {
+    id: number;
+    contentType: string;
+    photo: string[];
+    fileName: string;
+  }[];
   title: string;
   tags: {
     id: number;
     tagName: string;
     postList: string[];
   }[];
-  content: string;
+  content: string[];
+  contentType: string;
   createdDate: string;
   creatorId: number;
   comment: {
@@ -53,6 +60,11 @@ export interface IStore {
   };
   aboutTeamData: {
     team: ITeamSlide[];
+    isNew: boolean;
+    pending: boolean;
+  };
+  actualPostsData: {
+    posts: IActualPagePost[];
     isNew: boolean;
     pending: boolean;
   };

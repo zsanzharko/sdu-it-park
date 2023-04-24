@@ -21,6 +21,7 @@ const contactsPeopleData = createSlice({
     builder
       .addCase(fetchContactsData.pending, (state) => {
         state.pending = true;
+        state.isNew = false;
       })
       .addCase(fetchContactsData.fulfilled, (state, action) => {
         state.people = action.payload;

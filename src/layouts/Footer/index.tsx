@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { FacebookIcon } from '../../assets/icons/FacebookIcon';
 import { Logo } from '../../components/Logo';
-import { InstagramIcon } from '../../assets/icons/InstagramIcon';
-import { LinkedinIcon } from '../../assets/icons/LinkedinIcon';
+import facebook from '../../assets/icons/facebook.svg';
+import instagram from '../../assets/icons/instagram.svg';
+import linkedin from '../../assets/icons/linkedin.svg';
 import earth from '../../assets/icons/EarthIcon.svg';
 import letter from '../../assets/icons/LetterIcon.svg';
 
@@ -50,13 +50,13 @@ export const Footer: React.FC = () => {
         <Logo />
         <div className="footer__icons-wrapper">
           <Link to={links.facebook}>
-            <FacebookIcon />
+            <img className="footer__icons-wrapper__image" src={facebook} alt="" />
           </Link>
           <Link to={links.instagram}>
-            <InstagramIcon />
+            <img className="footer__icons-wrapper__image" src={instagram} alt="" />
           </Link>
           <Link to={links.linkedIn}>
-            <LinkedinIcon />
+            <img className="footer__icons-wrapper__image" src={linkedin} alt="" />
           </Link>
         </div>
       </div>
