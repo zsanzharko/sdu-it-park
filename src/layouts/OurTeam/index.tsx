@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { DecorationArrow } from '../../components/DecorationArrow';
 import { PageTitle } from '../../components/PageTitle';
