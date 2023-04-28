@@ -3,7 +3,7 @@ import { fetchData } from '../../utils/functions';
 import { ITeamSlide } from '../../utils/types';
 
 export const fetchAboutTeamData = createAsyncThunk('aboutTeamData/fetchAboutTeamData', async () => {
-  return fetchData('http://185.4.180.23:8000/api/v1/team-info/list');
+  return fetchData('/api/v1/team-info/list');
 });
 
 const aboutTeamData = createSlice({

@@ -5,7 +5,7 @@ import { fetchData } from '../../utils/functions';
 export const fetchContactsData = createAsyncThunk(
   'contactsPeopleData/fetchContactsPeopleData',
   async () => {
-    return fetchData('http://185.4.180.23:8000/api/v1/contacts');
+    return fetchData('/api/v1/contacts');
   }
 );
 
