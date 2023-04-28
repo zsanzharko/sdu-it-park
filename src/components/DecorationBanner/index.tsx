@@ -13,13 +13,11 @@ export const DecorationBanner: React.FC = () => {
   const [opacity, setOpacity] = useState(0);
 
   const goToPrevious = () => {
-    const index = currentIndex - 1;
-    setCurrentIndex(index < 0 ? slides.length - 1 : index);
+    setCurrentIndex((index) => (index - 1 < 0 ? slides.length - 1 : index - 1));
   };
 
   const goToNext = () => {
-    const index = currentIndex + 1;
-    setCurrentIndex(index === slides.length ? 0 : index);
+    setCurrentIndex((index) => (index + 1 === slides.length ? 0 : index + 1));
   };
 
   const goToSlide = (slide: IDecorationBanner) => {
@@ -35,11 +33,17 @@ export const DecorationBanner: React.FC = () => {
       {
         id: 0,
         background:
-          'https://postgradoeconomia.com/wp-content/uploads/comunicacion-en-la-empresa.jpg',
+          'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80',
       },
       {
         id: 1,
-        background: 'https://elceo.com/wp-content/uploads/2019/06/coding.jpg',
+        background:
+          'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80',
+      },
+      {
+        id: 2,
+        background:
+          'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80',
       },
     ];
     setSlides(data);

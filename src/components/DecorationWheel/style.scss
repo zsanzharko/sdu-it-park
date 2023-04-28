@@ -1,0 +1,30 @@
+.decoration-wheel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.decoration-wheel__image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  &-in {
+    transform: rotate(10deg);
+    width: calc(100% - 20px);
+  }
+
+  &-out {
+    animation: rotate 20s linear 0s infinite;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

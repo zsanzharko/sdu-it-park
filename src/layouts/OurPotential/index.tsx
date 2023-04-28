@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 import { DecorationPeople } from '../../components/DecorationPeople';
-import { Logo } from '../../components/Logo';
 import './style.scss';
 
 export const OurPotential: React.FC = () => {

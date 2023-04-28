@@ -1,0 +1,21 @@
+.roles-block {
+  width: 100%;
+  height: 250px;
+  padding: 10px 20px;
+}
+
+.roles-block__wrapper {
+  width: 100%;
+  height: 100%;
+  // padding: 0 10px;
+  background: url('../../assets/images/roles-background.png'), var(--main-blue);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  box-shadow: 0px 4px 19px rgba(0, 0, 0, 0.25);
+  border-radius: 40px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}

@@ -16,10 +16,6 @@ export const OurMission: React.FC = () => {
   const socketRef = useRef<HTMLImageElement>(null);
   const [dirMissionIsVisible, setDirMissionIsVisible] = useState(false);
 
-  const scrollToBlock = () => {
-    document.querySelector('.our-team')!.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
-
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       const entry = entries[0];
@@ -67,7 +63,7 @@ export const OurMission: React.FC = () => {
           конечного продукта.
         </span>
       </p>
-      <DecorationArrow fn={scrollToBlock} />
+      <DecorationArrow name=".our-team" />
     </section>
   );
 };

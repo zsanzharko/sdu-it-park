@@ -1,0 +1,43 @@
+.software-section {
+  position: relative;
+  width: 100%;
+  height: max-content;
+  overflow: hidden;
+
+  > .page-title {
+    color: #000;
+  }
+}
+
+.software-section__wrapper {
+  padding: 0 20px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.software-section__image {
+  position: relative;
+  left: 0;
+  width: 700px;
+}
+
+.software-section__text-block {
+  max-width: 1000px;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 15px;
+}
+
+.software-section__text {
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: 24px;
+  color: #4f4f4f;
+}
+
+.software-section__text-marked {
+  padding: 0 0 0 40px;
+  list-style-type: square;
+}

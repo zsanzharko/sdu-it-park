@@ -3,7 +3,6 @@
   padding-top: 40px;
   width: 100%;
   height: max-content;
-  padding-bottom: 100px;
   overflow: hidden;
 
   > .page-title {
@@ -47,7 +46,7 @@
 }
 
 .our-team__text {
-  padding: 53px 264px 0;
+  padding: 53px 264px 53px;
   font-family: var(--font);
   font-weight: 300;
   font-size: 36px;

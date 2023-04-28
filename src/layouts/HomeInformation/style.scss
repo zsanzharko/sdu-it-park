@@ -1,0 +1,10 @@
+.home-information {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+
+  > :nth-child(3) {
+    grid-column: 1 / 3;
+  }
+}

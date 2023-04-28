@@ -19,12 +19,6 @@ export const OurTeam: React.FC = () => {
     setActiveBtn(!activeBtn);
   };
 
-  const scrollToBlock = () => {
-    document
-      .querySelector('.our-potential')!
-      .scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
-
   useEffect(() => {
     if (isNew) {
       dispatch(fetchAboutTeamData());
@@ -57,7 +51,7 @@ export const OurTeam: React.FC = () => {
         Команда Технопарка состоит из наставников, имеющих индустриальный и/или исследовательский
         опыт. Это преподаватели СДУ, студенты с опытом участия в проектах, эксперты из индустрии.
       </p>
-      <DecorationArrow fn={scrollToBlock} />
+      <DecorationArrow name=".our-potential" />
     </section>
   );
 };

@@ -1,7 +1,7 @@
 .decoration-banner {
   position: relative;
   width: 100%;
-  min-height: 772px;
+  min-height: 500px;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -31,6 +31,7 @@
   background-color:rgba(217, 217, 217, 0.25);
   cursor: pointer;
   transition: all 0.6s ease-in-out;
+  user-select: none;
     
   &-left {
     left: 50px;
