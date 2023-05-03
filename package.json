@@ -1,11 +1,10 @@
 {
   "name": "sdu-it-park",
   "private": true,
-  "proxy": "http://185.4.180.23:8000",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --port 8000",
+    "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
