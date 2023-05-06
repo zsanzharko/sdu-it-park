@@ -10,10 +10,9 @@ export const fetchAddressesData = createAsyncThunk(
 );
 
 const initialState: IContactsBlock = {
-  locationPlace:
-    'Алматинская область, Kарасайский район. 040900, город Каскелен, ул. Абылай хана, 1/1',
-  sectionPlace: 'block 5, number 69',
-  phoneNumberLocation: '8777-777-77-77',
+  location: 'Алматинская область, Kарасайский район. 040900, город Каскелен, ул. Абылай хана, 1/1',
+  section: 'block 5, number 69',
+  phoneNumber: '8777-777-77-77',
 };
 
 const contactsAddressesData = createSlice({

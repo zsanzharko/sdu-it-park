@@ -23,10 +23,10 @@ export const AddressContainer: React.FC = () => {
 
   return (
     <div className="address-container">
-      <AddressBlock text={addresses.locationPlace} image={<LocationIcon />} />
+      <AddressBlock text={addresses.location} image={<LocationIcon />} />
       <div className="address-container-small">
-        <AddressBlock text={addresses.sectionPlace} image={<RoomIcon />} />
-        <AddressBlock text={addresses.phoneNumberLocation} image={<PhoneIcon />} />
+        <AddressBlock text={addresses.section} image={<RoomIcon />} />
+        <AddressBlock text={addresses.phoneNumber} image={<PhoneIcon />} />
       </div>
     </div>
   );

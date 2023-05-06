@@ -50,7 +50,10 @@ export const ContactSlider: React.FC = () => {
       </button>
       <div
         className="contact-slider__container"
-        style={{ transform: `translateX(-${currentIndex * 690}px)` }}
+        style={{
+          transform: `translateX(-${currentIndex * 690}px)`,
+          width: `calc(${people.length} * 690px)`,
+        }}
       >
         {people.length > 0 &&
           !pending &&
