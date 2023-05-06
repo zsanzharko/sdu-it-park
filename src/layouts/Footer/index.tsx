@@ -64,16 +64,19 @@ export const Footer: React.FC = () => {
       <div className="footer__contacts">
         <div className="footer__contacts-wrapper">
           <p className="footer__contacts-text">Нужна помощь? Свяжитесь с нами:</p>
-          <Link to="/" className="footer__contacts-text">
+          <Link to={`tel:${links.phoneNumber}`} className="footer__contacts-text">
             {links?.phoneNumber}
           </Link>
         </div>
         <div className="footer__contacts-wrapper">
-          <Link to="/" className="footer__contacts-text footer__contacts-text-small">
+          <Link to={links.url} className="footer__contacts-text footer__contacts-text-small">
             <img src={earth} alt="earth icon" />
             {links?.url}
           </Link>
-          <Link to="/" className="footer__contacts-text footer__contacts-text-small">
+          <Link
+            to={`mailto:${links.email}`}
+            className="footer__contacts-text footer__contacts-text-small"
+          >
             <img src={letter} alt="earth icon" />
             {links?.email}
           </Link>

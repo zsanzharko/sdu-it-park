@@ -25,7 +25,7 @@ export interface IActualPagePost {
   postPhotoList: {
     id: number;
     contentType: string;
-    photo: string[];
+    photo: string;
     fileName: string;
   }[];
   title: string;
@@ -34,7 +34,7 @@ export interface IActualPagePost {
     tagName: string;
     postList: string[];
   }[];
-  content: string[];
+  content: string;
   contentType: string;
   createdDate: string;
   creatorId: number;

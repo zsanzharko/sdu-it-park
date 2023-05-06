@@ -13,7 +13,7 @@
 
 .actual-page__wrapper {
   width: 100%;
-  padding: 0 150px;
+  padding: 0 50px 0 150px;
   display: grid;
   grid-template-columns: 1fr auto;
 }
@@ -53,4 +53,12 @@
   &:hover > .scroll-text {
     opacity: 1;
   }
+}
+
+.actual-page__posts {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  gap: 10px;
 }

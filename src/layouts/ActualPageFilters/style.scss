@@ -2,11 +2,12 @@
   display: flex;
   flex-flow: column wrap;
   gap: 33px;
+  margin-top: 50px;
 }
 
 .actual-page__filters-search {
   position: relative;
-  width: 380px;
+  width: 280px;
 
   > .search-icon {
     position: absolute;

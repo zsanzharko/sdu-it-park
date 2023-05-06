@@ -52,7 +52,7 @@ export const ContactSlider: React.FC = () => {
         className="contact-slider__container"
         style={{
           transform: `translateX(-${currentIndex * 690}px)`,
-          width: `calc(${people.length} * 690px)`,
+          width: `${+people.length * 690}px`,
         }}
       >
         {people.length > 0 &&

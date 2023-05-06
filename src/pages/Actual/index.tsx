@@ -5,7 +5,7 @@ import { PageTitle } from '../../components/PageTitle';
 import { ActualPageFilters } from '../../layouts/ActualPageFilters';
 import { IStore } from '../../utils/types';
 import { LoadingIcon } from '../../assets/icons/LoadingIcon';
-import { ActualPagePost } from '../../components/ActualPagePost';
+import { ActualPagePost } from '../../layouts/ActualPagePost';
 import { useAppDispatch } from '../../store/store.dispath';
 
 import './style.scss';
@@ -27,9 +27,9 @@ export const Actual: React.FC = () => {
         <p className="scroll-text scroll-text__arrow">❮</p>
         <p className="scroll-text">Наверх</p>
       </button>
-      <PageTitle name="актуальное" />
       <div className="actual-page__wrapper">
         <div className="actual-page__posts">
+          <PageTitle name="актуальное" />
           {posts.length > 0 &&
             !pending &&
             posts.map((post) => {
