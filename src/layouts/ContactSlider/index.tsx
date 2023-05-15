@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { useAppDispatch } from '../../store/store.dispath';
@@ -12,6 +12,7 @@ import './style.scss';
 export const ContactSlider: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const { people, pending, isNew } = useSelector((state: IStore) => state.contactsPeopleData);
+  const container = useRef<HTMLDivElement>(null);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -53,7 +54,9 @@ export const ContactSlider: React.FC = () => {
         style={{
           transform: `translateX(-${currentIndex * 690}px)`,
           width: `${+people.length * 690}px`,
+          gridTemplateColumns: `repeat(${people.length}, 690px)`,
         }}
+        ref={container}
       >
         {people.length > 0 &&
           !pending &&
