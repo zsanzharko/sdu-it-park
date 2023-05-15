@@ -15,15 +15,24 @@ export const Actual: React.FC = () => {
   const { posts, isNew, pending } = useSelector((state: IStore) => state.actualPostsData);
   const dispatch = useAppDispatch();
 
+  const scrollToTop = () => {
+    document.querySelector('.header')!.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   useEffect(() => {
     if (isNew) {
-      dispatch(fetchActualPostsData());
+      dispatch(fetchActualPostsData('/api/v1/posts/list'));
     }
   }, [dispatch, isNew]);
 
   return (
     <div className="actual-page">
-      <button type="button" className="actual-page__wrapper-scroll">
+      <button
+        type="button"
+        className="actual-page__wrapper-scroll"
+        onClick={scrollToTop}
+        title="наверх"
+      >
         <p className="scroll-text scroll-text__arrow">❮</p>
         <p className="scroll-text">Наверх</p>
       </button>

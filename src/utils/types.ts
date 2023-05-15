@@ -22,30 +22,19 @@ export interface ITeamSlide {
 
 export interface IActualPagePost {
   id: number;
-  postPhotoList: {
+  photoList: {
     id: number;
+    contentByte: string;
     contentType: string;
-    photo: string;
-    fileName: string;
   }[];
   title: string;
-  tags: {
-    id: number;
-    tagName: string;
-    postList: string[];
-  }[];
-  content: string;
-  contentType: string;
+  tags: string[];
+  content: {
+    contentByte: string;
+    contentType: string;
+  };
   createdDate: string;
   creatorId: number;
-  comment: {
-    messageId: number;
-    repliedMessageId: number;
-    post: string;
-    text: string;
-    creatorId: number;
-    createdDate: string;
-  }[];
 }
 
 export interface IStore {

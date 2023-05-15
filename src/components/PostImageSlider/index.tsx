@@ -4,9 +4,8 @@ import './style.scss';
 
 interface IDecorationBanner {
   id: number;
+  contentByte: string;
   contentType: string;
-  photo: string;
-  fileName: string;
 }
 
 interface IPostImageSlider {
@@ -60,7 +59,7 @@ export const PostImageSlider: React.FC<IPostImageSlider> = ({ slides }) => {
             <div
               key={slide.id}
               className="decoration-banner__slide"
-              style={{ backgroundImage: `url(	data:image/jpg;base64,${slide.photo})` }}
+              style={{ backgroundImage: `url(	data:image/jpg;base64,${slide.contentByte})` }}
             />
           );
         })}

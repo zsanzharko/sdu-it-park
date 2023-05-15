@@ -4,8 +4,8 @@ import { IActualPagePost } from '../../utils/types';
 
 export const fetchActualPostsData = createAsyncThunk(
   'actualPostsData/fetchActualPostsData',
-  async () => {
-    return fetchData('/api/v1/posts/list');
+  async (link: string) => {
+    return fetchData(link);
   }
 );
 

@@ -1,6 +1,9 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import { useEffect, useState } from 'react';
 import './style.scss';
+import banner1 from '../../assets/images/banner1.png';
+import banner2 from '../../assets/images/banner2.png';
+import banner3 from '../../assets/images/banner3.png';
 
 interface IDecorationBanner {
   id: number;
@@ -32,18 +35,15 @@ export const DecorationBanner: React.FC = () => {
     const data: IDecorationBanner[] = [
       {
         id: 0,
-        background:
-          'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80',
+        background: `${banner1}`,
       },
       {
         id: 1,
-        background:
-          'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80',
+        background: `${banner2}`,
       },
       {
         id: 2,
-        background:
-          'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80',
+        background: `${banner3}`,
       },
     ];
     setSlides(data);

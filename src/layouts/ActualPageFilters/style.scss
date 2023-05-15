@@ -8,12 +8,14 @@
 .actual-page__filters-search {
   position: relative;
   width: 280px;
+}
 
-  > .search-icon {
-    position: absolute;
-    right: 5px;
-    top: 5px;
-  }
+.actual-page__filters-search__button {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background: none;
+  border: none;
 }
 
 .filters-search__input {
