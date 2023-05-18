@@ -1,12 +1,15 @@
-import { PageTitle } from '../PageTitle';
+// import { PageTitle } from '../PageTitle';
 import './style.scss';
-import software from '../../assets/images/laptop2.png';
+// import software from '../../assets/images/laptop2.png';
 
 export const HardwareSection: React.FC = () => {
   return (
     <div className="software-section">
-      <PageTitle name="software" />
-      <div className="software-section__wrapper">
+      {/* <PageTitle name="software" /> */}
+      <div className="software-section__block-first" />
+      <div className="software-section__block-second" />
+      <div className="software-section__block-third" />
+      {/* <div className="software-section__wrapper">
         <img className="software-section__image" src={software} alt="" />
         <div className="software-section__text-block">
           <p className="software-section__text">
@@ -30,7 +33,7 @@ export const HardwareSection: React.FC = () => {
             обеспечения, присоединившись к команде Технопарка.
           </p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

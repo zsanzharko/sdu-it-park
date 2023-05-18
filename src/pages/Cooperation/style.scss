@@ -1,7 +1,7 @@
 .cooperation-page {
   position: relative;
   width: 100%;
-  padding: 8rem 0 10rem;
+  padding: 50px 0;
   background: var(--main-blue);
   display: flex;
   flex-flow: column wrap;
@@ -12,15 +12,6 @@
 
 .cooperation-page__wrapper {
   position: relative;
-  width: 1152px;
+  width: 1000px;
   overflow: hidden;
-}
-
-.cooperation-page__iframe {
-  position: absolute;
-  top: 1500px;
-  height: 100%;
-  width: 100%;
-  transform: scale(1.8);
-  border: none;
 }

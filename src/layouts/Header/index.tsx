@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import GoogleLogin from 'react-google-login';
 
 import { routes } from './index.routes';
 import { Logo } from '../../components/Logo';
@@ -30,6 +31,7 @@ export const Header: React.FC = () => {
           );
         })}
       </nav>
+      <GoogleLogin clientId="sss" />
     </div>
   );
 };

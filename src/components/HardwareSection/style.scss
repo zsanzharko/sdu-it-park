@@ -1,8 +1,50 @@
 .software-section {
   position: relative;
+  z-index: 0;
   width: 100%;
-  height: max-content;
+  height: 1200px;
   overflow: hidden;
+  background: var(--main-blue);
+  transition: all 2s linear;
+
+  &__block {
+    z-index: 1;
+
+    &-first {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      clip-path: polygon(0 0, 100% 0, 100% calc(50% - 1px), 0 0);
+      background: radial-gradient(circle at 85% 25%, #fff 220px, #fff 220px);
+
+      &:hover {
+        background: radial-gradient(circle at 85% 20%, var(--main-red) 220px, #fff 220px);
+        cursor: pointer;
+      }
+    }
+
+    &-second {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      clip-path: polygon(0 1px, 100% 50%, 0 calc(100% - 1px), 0 1px);
+      background: #fff;
+    }
+
+    &-third {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      clip-path: polygon(0 100%, 100% calc(50% + 1px), 100% 100%, 0 100%);
+      background: #fff;
+    }
+  }
 
   > .page-title {
     color: #000;
