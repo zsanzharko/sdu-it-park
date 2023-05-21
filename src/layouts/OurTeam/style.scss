@@ -4,7 +4,12 @@
   width: 100%;
   height: max-content;
   overflow: hidden;
+}
 
+.our-tem__wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+  
   > .page-title {
     color: #000;
   }

@@ -1,6 +1,11 @@
 .header {
-  position: relative;
   width: 100%;
+}
+
+.header__wrapper {
+  position: relative;
+  max-width: 1920px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,6 +16,12 @@
   display: flex;
   flex-flow: row wrap;
   gap: 50px;
+}
+
+@media screen and (max-width: 1200px) {
+  .header__links {
+    gap: 25px;
+  }
 }
 
 .header__link {

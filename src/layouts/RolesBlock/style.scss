@@ -1,5 +1,6 @@
 .roles-block {
-  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
   height: 250px;
   padding: 10px 20px;
 }
@@ -7,7 +8,6 @@
 .roles-block__wrapper {
   width: 100%;
   height: 100%;
-  // padding: 0 10px;
   background: url('../../assets/images/roles-background.png'), var(--main-blue);
   background-size: cover;
   background-repeat: no-repeat;

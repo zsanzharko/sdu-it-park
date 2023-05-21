@@ -1,0 +1,45 @@
+.google-auth__profile {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.google-auth__profile-image {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba($color: #000000, $alpha: 0.5);
+  border-radius: 5px;
+}
+
+.google-auth__profile-block {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 5px;
+}
+
+.google-auth__profile-text {
+  font-family: var(--font);
+  font-size: 16px;
+  color: #000000;
+
+  &_small {
+    font-size: 12px;
+  }
+}
+
+.google-auth__button {
+  width: max-content;
+  padding: 5px;
+  border: 1px solid #474747;
+  border-radius: 5px;
+  background: none;
+  font-family: var(--font);
+  font-size: 16px;
+  color: #474747;
+  transition: all 0.2s linear;
+
+  &:hover {
+    background: #474747; 
+    color: #ffffff;
+  }
+}

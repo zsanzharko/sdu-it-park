@@ -46,40 +46,41 @@ export const Footer: React.FC = () => {
 
   return (
     <div className="footer">
-      <div className="footer__icons">
-        <Logo />
-        <div className="footer__icons-wrapper">
-          <Link to={links.facebook}>
-            <img className="footer__icons-wrapper__image" src={facebook} alt="" />
-          </Link>
-          <Link to={links.instagram}>
-            <img className="footer__icons-wrapper__image" src={instagram} alt="" />
-          </Link>
-          <Link to={links.linkedIn}>
-            <img className="footer__icons-wrapper__image" src={linkedin} alt="" />
-          </Link>
+      <div className="footer__wrapper">
+        <div className="footer__icons">
+          <Logo />
+          <div className="footer__icons-wrapper">
+            <Link to={links.facebook}>
+              <img className="footer__icons-wrapper__image" src={facebook} alt="" />
+            </Link>
+            <Link to={links.instagram}>
+              <img className="footer__icons-wrapper__image" src={instagram} alt="" />
+            </Link>
+            <Link to={links.linkedIn}>
+              <img className="footer__icons-wrapper__image" src={linkedin} alt="" />
+            </Link>
+          </div>
         </div>
-      </div>
-
-      <div className="footer__contacts">
-        <div className="footer__contacts-wrapper">
-          <p className="footer__contacts-text">Нужна помощь? Свяжитесь с нами:</p>
-          <Link to={`tel:${links.phoneNumber}`} className="footer__contacts-text">
-            {links?.phoneNumber}
-          </Link>
-        </div>
-        <div className="footer__contacts-wrapper">
-          <Link to={links.url} className="footer__contacts-text footer__contacts-text-small">
-            <img src={earth} alt="earth icon" />
-            {links?.url}
-          </Link>
-          <Link
-            to={`mailto:${links.email}`}
-            className="footer__contacts-text footer__contacts-text-small"
-          >
-            <img src={letter} alt="earth icon" />
-            {links?.email}
-          </Link>
+        <div className="footer__contacts">
+          <div className="footer__contacts-wrapper">
+            <p className="footer__contacts-text">Нужна помощь? Свяжитесь с нами:</p>
+            <Link to={`tel:${links.phoneNumber}`} className="footer__contacts-text">
+              {links?.phoneNumber}
+            </Link>
+          </div>
+          <div className="footer__contacts-wrapper">
+            <Link to={links.url} className="footer__contacts-text footer__contacts-text-small">
+              <img src={earth} alt="earth icon" />
+              {links?.url}
+            </Link>
+            <Link
+              to={`mailto:${links.email}`}
+              className="footer__contacts-text footer__contacts-text-small"
+            >
+              <img src={letter} alt="earth icon" />
+              {links?.email}
+            </Link>
+          </div>
         </div>
       </div>
     </div>

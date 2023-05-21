@@ -27,31 +27,33 @@ export const OurTeam: React.FC = () => {
 
   return (
     <section className="our-team">
-      <PageTitle name="наша команда" />
-      <div className="our-team__buttons-container">
-        <button
-          className="our-team__button"
-          type="button"
-          onClick={handleBtnClick}
-          disabled={activeBtn}
-        >
-          учителя
-        </button>
-        <button
-          className="our-team__button"
-          type="button"
-          onClick={handleBtnClick}
-          disabled={!activeBtn}
-        >
-          студенты
-        </button>
+      <div className="our-tem__wrapper">
+        <PageTitle name="наша команда" />
+        <div className="our-team__buttons-container">
+          <button
+            className="our-team__button"
+            type="button"
+            onClick={handleBtnClick}
+            disabled={activeBtn}
+          >
+            учителя
+          </button>
+          <button
+            className="our-team__button"
+            type="button"
+            onClick={handleBtnClick}
+            disabled={!activeBtn}
+          >
+            студенты
+          </button>
+        </div>
+        <TeamSlider type={activeBtn ? 'EMPLOYEE' : 'STUDENT'} slides={slides} />
+        <p className="our-team__text">
+          Команда Технопарка состоит из наставников, имеющих индустриальный и/или исследовательский
+          опыт. Это преподаватели СДУ, студенты с опытом участия в проектах, эксперты из индустрии.
+        </p>
+        <DecorationArrow name=".our-potential" />
       </div>
-      <TeamSlider type={activeBtn ? 'EMPLOYEE' : 'STUDENT'} slides={slides} />
-      <p className="our-team__text">
-        Команда Технопарка состоит из наставников, имеющих индустриальный и/или исследовательский
-        опыт. Это преподаватели СДУ, студенты с опытом участия в проектах, эксперты из индустрии.
-      </p>
-      <DecorationArrow name=".our-potential" />
     </section>
   );
 };

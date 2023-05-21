@@ -12,7 +12,9 @@
 }
 
 .actual-page__wrapper {
+  max-width: 1920px;
   width: 100%;
+  margin: 0 auto;
   padding: 0 50px 0 150px;
   display: grid;
   grid-template-columns: 1fr auto;
@@ -36,7 +38,7 @@
 .actual-page__wrapper-scroll {
   position: absolute;
   height: 100%;
-  width: 150px;
+  width: 120px;
   top: 0;
   display: flex;
   align-items: start;

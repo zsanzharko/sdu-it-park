@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import GoogleLogin from 'react-google-login';
-
 import { routes } from './index.routes';
 import { Logo } from '../../components/Logo';
+import { GoogleAuth } from '../../components/GoogleAuth';
 
 import './style.scss';
 
@@ -19,19 +18,21 @@ export const Header: React.FC = () => {
 
   return (
     <div className="header">
-      <Logo />
-      <nav className="header__links">
-        {routes.map((route) => {
-          const className =
-            route.id === activeLink ? 'header__link header__link-active' : 'header__link';
-          return (
-            <Link key={route.id} className={className} to={route.link}>
-              {route.title}
-            </Link>
-          );
-        })}
-      </nav>
-      <GoogleLogin clientId="sss" />
+      <div className="header__wrapper">
+        <Logo />
+        <nav className="header__links">
+          {routes.map((route) => {
+            const className =
+              route.id === activeLink ? 'header__link header__link-active' : 'header__link';
+            return (
+              <Link key={route.id} className={className} to={route.link}>
+                {route.title}
+              </Link>
+            );
+          })}
+        </nav>
+        <GoogleAuth />
+      </div>
     </div>
   );
 };
