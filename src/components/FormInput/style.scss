@@ -1,7 +1,7 @@
 .form-input {
   display: flex;
   flex-flow: column wrap;
-  gap: 2px;
+  gap: 5px;
   font-family: var(--font);
   font-size: 16px;
 }
@@ -13,11 +13,12 @@
 .form-input__input {
   background: none;
   border: 1px solid #fff;
-  border-radius: 3px;
+  border-radius: 5px;
   width: 300px;
   padding: 5px;
   outline: none;
   color: #fff;
+  font-size: 16px;
 
   &::placeholder {
     color: rgba($color: #ffffff, $alpha: 0.5);

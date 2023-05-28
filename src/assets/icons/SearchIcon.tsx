@@ -2,8 +2,8 @@ export const SearchIcon: React.FC = () => {
   return (
     <svg
       className="search-icon"
-      width={44}
-      height={44}
+      width={30}
+      height={30}
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"

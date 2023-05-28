@@ -126,6 +126,7 @@ export const CooperationForm: React.FC = () => {
           className="form-input__textarea"
           placeholder="..."
           {...register('text', { required: '* необходимо добавить описание!' })}
+          onKeyUp={() => trigger('text')}
         />
         {errors.text?.message ? (
           <p className="form-input__error">{errors.text?.message as string}</p>

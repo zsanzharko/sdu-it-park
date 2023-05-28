@@ -1,13 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-
 import { useAppDispatch } from '../../store/store.dispath';
 import { fetchAboutTeamData } from '../../store/slices/aboutTeam.slice';
 import { DecorationArrow } from '../../components/DecorationArrow';
 import { PageTitle } from '../../components/PageTitle';
 import { IStore } from '../../utils/types';
 import { TeamSlider } from '../TeamSlider';
-
 import './style.scss';
 
 export const OurTeam: React.FC = () => {

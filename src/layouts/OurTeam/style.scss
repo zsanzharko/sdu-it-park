@@ -30,13 +30,13 @@
 }
 
 .our-team__button {
-  width: 365px;
-  height: 61px;
+  padding: 10px 0;
+  width: 250px;
   border: none;
   border-radius: 40px;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
-  font-size: 36px;
+  font-size: 24px;
   color: #fff;
   background: #072A6D;
 
@@ -51,10 +51,10 @@
 }
 
 .our-team__text {
-  padding: 53px 264px 53px;
+  padding: 20px 264px 30px;
   font-family: var(--font);
   font-weight: 300;
-  font-size: 36px;
+  font-size: 26px;
   color: #474747;
   text-align: center;
 }

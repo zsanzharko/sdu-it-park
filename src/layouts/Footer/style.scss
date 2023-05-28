@@ -6,7 +6,7 @@
   max-width: 1920px;
   margin: 0 auto;
   height: max-content;
-  padding: 15px 35px 10px;
+  padding: 10px 35px 10px;
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
@@ -27,7 +27,7 @@
 }
 
 .footer__icons-wrapper__image {
-  height: 30px;
+  height: 20px;
 }
 
 .footer__contacts {
@@ -48,20 +48,20 @@
 .footer__contacts-text {
   font-family: var(--font);
   font-weight: 300;
-  font-size: 30px;
+  font-size: 20px;
   color: var(--main-blue);
   text-decoration: none;
   text-align: center;
 }
 
 .footer__contacts-text-small {
-  font-size: 26px;  
+  font-size: 18px;  
   display: flex;
   align-items: center;
   gap: 5px;
 
   > img {
-    width: 46px;
-    height: 46px;
+    width: 30px;
+    height: 30px;
   }
 }

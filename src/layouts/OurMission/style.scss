@@ -1,26 +1,37 @@
 @keyframes handLeft {
-  0% { left: -1000px; }
-  25% { left: -750px; }
-  50% { left: -500px; }
-  75% { left: -250px; }
+  0% { left: -750px; }
+  25% { left: -500px; }
+  50% { left: -250px; }
+  75% { left: -100px; }
   100% { left: -10px; }
 }
 
 @keyframes handRight {
-  0% { right: -1000px; }
-  25% { right: -750px; }
-  50% { right: -500px; }
-  75% { right: -250px; }
+  0% { right: -750px; }
+  25% { right: -500px; }
+  50% { right: -250px; }
+  75% { right: -100px; }
   100% { right: -10px; }
 }
 
 .our-mission {
   position: relative;
-  padding-top: 40px;
   width: 100%;
-  min-height: 1019px;
   box-shadow: inset 0px 10px 3px -3px rgba(50, 50, 50, 0.25);
   overflow: hidden;
+}
+
+.our-mission__wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  padding-top: 40px;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  gap: 50px;
+  background: rgba(255, 255, 255, 0.5);
 
   > .page-title {
     color: #000;
@@ -28,38 +39,19 @@
 }
 
 .our-mission__decorations {
-  position: relative;
-  top: -20px;
-  width: 100%;
-  height: 796px;
-}
-
-.our-mission__decorations-center {
   position: absolute;
-  left: calc(50% - 100px);
-  top: 93px;
-  width: 200px;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  border: 5px solid #ffffff;
-  background: none;
-  transition: all 0.5s ease-in-out 1.5s;
-
-  &.animation-socket-block {
-    border: 5px solid #E4E4E4;
-    background: rgba($color: #ffffff, $alpha: 0.7);
-  }
+  bottom: -40px;
+  width: 100%;
+  height: 100%;
 }
 
 .our-mission__decorations-image {
   position: absolute;
+  z-index: 0;
+  bottom: -10px;
 
   &.hand-left {
-    bottom: -150px;
-    left: -1000px;
+    width: 500px;
 
     &.animation-hand {
       animation: handLeft 1s ease-out 0s forwards;
@@ -68,38 +60,25 @@
   }
 
   &.hand-right {
-    bottom: -180px;
-    right: -1000px;
+    width: 500px;
 
     &.animation-hand {
       animation: handRight 1s ease-out 0s forwards;
       animation-timing-function: steps(100, jump-none);
     }
   }
-
-  &.socket {
-    opacity: 0;
-    transition: all 0.5s ease-in-out 1s;
-
-    &.animation-socket {
-      opacity: 1;
-    }
-  }
 }
 
 .our-mission__text {
-  position: absolute;
-  bottom: 115px;
   width: 100%;
   padding: 20px 0;
   font-family: var(--font);
   font-weight: 300;
-  font-size: 36px;
+  font-size: 26px;
   color: #474747;
   text-align: center;
   display: flex;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.5);
 }
 
 .our-mission__text-span {
