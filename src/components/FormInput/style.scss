@@ -7,7 +7,7 @@
 }
 
 .form-input__text {
-  color: #000000;
+  color: #fff;
 }
 
 .form-input__input {
@@ -35,7 +35,7 @@
   appearance: none;
   width: 15px;
   height: 15px;
-  border: 0.15em solid var(--main-blue);
+  border: 0.15em solid #fff;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -48,7 +48,7 @@
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: var(--main-blue);
+    background: #fff;
     transform: scale(0);
     transition: 0.1s transform linear;
   }
@@ -66,7 +66,7 @@
   padding: 5px 0;
   font-family: var(--font);
   font-size: 16px;
-  color: #000000;
+  color: rgba($color: #ffffff, $alpha: 0.8);
   text-transform: lowercase;
   cursor: pointer;
 }
