@@ -13,10 +13,18 @@ const actualPostsData = createSlice({
   name: 'actualPostsData',
   initialState: {
     posts: [] as IActualPagePost[],
+    initialPosts: [] as IActualPagePost[],
     isNew: true,
     pending: false,
   },
-  reducers: {},
+  reducers: {
+    filterByTitle: (state, action) => {
+      state.posts = state.initialPosts.filter((item) => item.title.indexOf(action.payload) > -1);
+    },
+    sortByDate: (state) => {
+      state.posts = state.initialPosts.sort((a, b) => +a.createdDate - +b.createdDate);
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchActualPostsData.pending, (state) => {
@@ -26,6 +34,7 @@ const actualPostsData = createSlice({
       .addCase(fetchActualPostsData.fulfilled, (state, action) => {
         state.pending = false;
         state.posts = action.payload;
+        state.initialPosts = action.payload;
         state.isNew = false;
       })
       .addCase(fetchActualPostsData.rejected, () => {
@@ -34,5 +43,6 @@ const actualPostsData = createSlice({
   },
 });
 
-const { reducer } = actualPostsData;
+const { reducer, actions } = actualPostsData;
+export const { filterByTitle, sortByDate } = actions;
 export default reducer;

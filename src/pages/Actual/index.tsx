@@ -1,15 +1,13 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-
 import { PageTitle } from '../../components/PageTitle';
 import { ActualPageFilters } from '../../layouts/ActualPageFilters';
 import { IStore } from '../../utils/types';
 import { LoadingIcon } from '../../assets/icons/LoadingIcon';
 import { ActualPagePost } from '../../layouts/ActualPagePost';
 import { useAppDispatch } from '../../store/store.dispath';
-
-import './style.scss';
 import { fetchActualPostsData } from '../../store/slices/actualPosts.slice';
+import './style.scss';
 
 export const Actual: React.FC = () => {
   const { posts, isNew, pending } = useSelector((state: IStore) => state.actualPostsData);

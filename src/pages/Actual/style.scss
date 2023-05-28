@@ -2,12 +2,12 @@
   position: relative;
   display: flex;
   flex-flow: column wrap;
-  justify-content: center;
   width: 100%;
+  min-height: 100vh;
   padding: 40px 0 50px;
   background: url('../../assets/images/sdu.png') bottom, #2f2f2f fixed repeat;
   background-blend-mode: multiply;
-  background-size: cover, cover;
+  background-size: contain, cover;
   background-repeat: no-repeat;
 }
 

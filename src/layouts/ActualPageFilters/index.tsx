@@ -1,21 +1,24 @@
 import { useState } from 'react';
-import { AnnouncementIcon } from '../../assets/icons/AnnouncementIcon';
+import { useDispatch } from 'react-redux';
+// import { AnnouncementIcon } from '../../assets/icons/AnnouncementIcon';
 import { CalendarIcon } from '../../assets/icons/CalendarIcon';
-import { FireIcon } from '../../assets/icons/FireIcon';
-import { NewsIcon } from '../../assets/icons/NewsIcon';
-import { ProjectIcon } from '../../assets/icons/ProjectIcon';
+// import { FireIcon } from '../../assets/icons/FireIcon';
+// import { NewsIcon } from '../../assets/icons/NewsIcon';
+// import { ProjectIcon } from '../../assets/icons/ProjectIcon';
 import { SearchIcon } from '../../assets/icons/SearchIcon';
-import { fetchData } from '../../utils/functions';
+import { filterByTitle, sortByDate } from '../../store/slices/actualPosts.slice';
 import './style.scss';
-import { useAppDispatch } from '../../store/store.dispath';
-import { fetchActualPostsData } from '../../store/slices/actualPosts.slice';
 
 export const ActualPageFilters: React.FC = () => {
   const [value, setValue] = useState('');
-  const dispatch = useAppDispatch();
+  const dispatch = useDispatch();
 
-  const searchByTitle = async () => {
-    dispatch(fetchActualPostsData(`/api/v1/posts/search?title=${value}`));
+  const handleFilterByTitle = () => {
+    dispatch(filterByTitle(value));
+  };
+
+  const handleSortByDate = () => {
+    dispatch(sortByDate());
   };
 
   return (
@@ -24,7 +27,7 @@ export const ActualPageFilters: React.FC = () => {
         <button
           className="actual-page__filters-search__button"
           type="button"
-          onClick={searchByTitle}
+          onClick={handleFilterByTitle}
         >
           <SearchIcon />
         </button>
@@ -34,11 +37,11 @@ export const ActualPageFilters: React.FC = () => {
           value={value}
           onChange={(e) => setValue(e.target.value)}
           onKeyDown={(e) => {
-            if (e.key === 'Enter') searchByTitle();
+            if (e.key === 'Enter') handleFilterByTitle();
           }}
         />
       </div>
-      <div className="actual-page__filters-list">
+      {/* <div className="actual-page__filters-list">
         <p className="filters-list__title">Лента</p>
         <button className="filters-list__button" type="button">
           <NewsIcon />
@@ -52,17 +55,17 @@ export const ActualPageFilters: React.FC = () => {
           <AnnouncementIcon />
           Анонсы
         </button>
-      </div>
+      </div> */}
       <div className="actual-page__filters-list">
         <p className="filters-list__title">Сортировать по</p>
-        <button className="filters-list__button" type="button">
+        <button className="filters-list__button" type="button" onClick={handleSortByDate}>
           <CalendarIcon />
           Дате
         </button>
-        <button className="filters-list__button" type="button">
+        {/* <button className="filters-list__button" type="button">
           <FireIcon />
           Релевантности
-        </button>
+        </button> */}
       </div>
     </div>
   );
