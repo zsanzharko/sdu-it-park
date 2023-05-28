@@ -7,6 +7,7 @@
   gap: 10px;
   align-items: center;
   justify-content: center;
+  padding-bottom: 20px;
 
   & > .page-title {
     width: 100%;
@@ -14,107 +15,22 @@
     background: #ffff;
     color: #000000;
   }
-}
 
-.form__input {
-  background: none;
-  border: 1px solid #fff;
-  border-radius: 3px;
-  width: 300px;
-  padding: 10px;
-  outline: none;
-  font-family: var(--font);
-  font-size: 20px;
-  color: #fff;
-
-  &::placeholder {
-    color: rgba($color: #ffffff, $alpha: 0.5);
-  }
-}
-
-.form__error {
-  font-family: var(--font);
-  font-size: 20px;
-  color: var(--main-red);
-}
-
-.form__radio-buttons {
-  padding: 10px 20px 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.form__radio-button__label {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  gap: 5px;
-  padding: 5px 0;
-  font-family: var(--font);
-  font-size: 20px;
-  color: #fff;
-  text-transform: capitalize;
-  cursor: pointer;
-}
-
-.form__radion-button {
-  position: relative;
-  appearance: none;
-  background-color: #fff;
-  width: 20px;
-  height: 20px;
-  border: 0.15em solid var(--main-blue);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-
-  &::before {
-    position: absolute;
-    content: "";
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--main-blue);
-    transform: scale(0);
-    transition: 0.1s transform linear;
-  }
-
-  &:checked::before {
-    transform: scale(1);
-  }
-}
-
-.form__textarea {  
-  width: 60%;
-  min-width: 40%;
-  max-width: 95%;
-  padding: 10px;
-  min-height: 100px;
-  margin-top: 10px;
-  outline: none;
-  background: none;
-  border: 1px solid #fff;
-  border-radius: 3px;
-  font-family: var(--font);
-  font-size: 20px;
-  color: #fff;
-
-  &::placeholder {
-    color: rgba($color: #ffffff, $alpha: 0.5);
+  > .loading-icon {
+    width: 30px;
+    height: 30px;
+    margin-top: 0;
   }
 }
 
 .form__button {
-  padding: 10px 20px;
-  margin: 10px 0 20px;
+  padding: 5px 10px;
+  margin: 10px 0 0;
   background: var(--main-blue);
   border: 1px solid var(--main-blue);
   border-radius: 3px;
   font-family: var(--font);
-  font-size: 20px;
+  font-size: 16px;
   color: #fff;
   transition: all 0.2s linear;
 

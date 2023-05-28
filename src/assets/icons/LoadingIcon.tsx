@@ -10,26 +10,30 @@ export const LoadingIcon: React.FC = () => (
     <path
       d="M232 0h48v160h-48z"
       style={{
-        fill: '#5b8fb9',
+        fill: '#072A6D',
+        opacity: '1',
       }}
     />
     <path
       d="M51.553 107.545h159.998v48H51.553z"
       style={{
-        fill: '#5b8fb9',
+        fill: '#072A6D',
+        opacity: '0.9',
       }}
       transform="rotate(-134.999 131.552 131.546)"
     />
     <path
       d="M0 232h160v48H0z"
       style={{
-        fill: '#5b8fb9',
+        fill: '#072A6D',
+        opacity: '0.8',
       }}
     />
     <path
       d="M107.558 300.449h48v159.998h-48z"
       style={{
-        fill: '#5b8fb9',
+        fill: '#072A6D',
+        opacity: '0.7',
       }}
       transform="rotate(-134.999 131.558 380.45)"
     />
@@ -37,12 +41,14 @@ export const LoadingIcon: React.FC = () => (
       d="M232 352h48v160h-48z"
       style={{
         fill: '#072A6D',
+        opacity: '0.6',
       }}
     />
     <path
       d="M300.449 356.446h159.998v48H300.449z"
       style={{
         fill: '#072A6D',
+        opacity: '0.5',
       }}
       transform="rotate(-134.999 380.449 380.448)"
     />
@@ -50,12 +56,14 @@ export const LoadingIcon: React.FC = () => (
       d="M352 232h160v48H352z"
       style={{
         fill: '#072A6D',
+        opacity: '0.4',
       }}
     />
     <path
       d="M356.443 51.54h48v159.998h-48z"
       style={{
         fill: '#072A6D',
+        opacity: '0.3',
       }}
       transform="rotate(-134.999 380.444 131.54)"
     />
