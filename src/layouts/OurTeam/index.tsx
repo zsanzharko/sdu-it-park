@@ -5,7 +5,7 @@ import { fetchAboutTeamData } from '../../store/slices/aboutTeam.slice';
 import { DecorationArrow } from '../../components/DecorationArrow';
 import { PageTitle } from '../../components/PageTitle';
 import { IStore } from '../../utils/types';
-import { TeamSlider } from '../TeamSlider';
+import { Carousel } from '../../components/Carousel';
 import './style.scss';
 
 export const OurTeam: React.FC = () => {
@@ -45,7 +45,9 @@ export const OurTeam: React.FC = () => {
             студенты
           </button>
         </div>
-        <TeamSlider type={activeBtn ? 'EMPLOYEE' : 'STUDENT'} slides={slides} />
+        <Carousel
+          slides={slides.filter((slide) => slide.type === (activeBtn ? 'EMPLOYEE' : 'STUDENT'))}
+        />
         <p className="our-team__text">
           Команда Технопарка состоит из наставников, имеющих индустриальный и/или исследовательский
           опыт. Это преподаватели СДУ, студенты с опытом участия в проектах, эксперты из индустрии.
