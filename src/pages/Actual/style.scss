@@ -17,7 +17,8 @@
   margin: 0 auto;
   padding: 0 50px 0 150px;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: auto auto;
+  justify-content: center;
 }
 
 .scroll-text {

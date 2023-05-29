@@ -1,25 +1,37 @@
-.post-image-slider {
-  min-height: 450px;
+.post-slider {
+  position: relative;
+  height: 350px;
+  width: 100%;
+}
 
-  > .decoration-banner__wrapper > .decoration-banner__arrow {
-    width: 50px;
-    height: 50px;
+.post-slider__wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.post-slider__buttons {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  display: grid;
+}
+
+.post-slider__button {
+  border: none;
+  background: rgba($color: #ffffff, $alpha: 0.5);
+  border-right: 1px solid rgba($color: #ffffff, $alpha: 0.5);
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba($color: #ffffff, $alpha: 0.9);
+  transition: all 0.2s linear;
+
+  &:hover {
+    background: rgba($color: #ffffff, $alpha: 0.55);
+  }
+
+  &:disabled {
     background: rgba($color: #ffffff, $alpha: 0.7);
-      
-    &-left {
-      left: 10px;
-    }
-    &-right {
-      right: 10px;
-    }
-
-    &:disabled {
-      opacity: 0.1;
-      cursor: auto;
-    }
-
-    &:not(:disabled) {
-      cursor: pointer;
-    }
   }
 }

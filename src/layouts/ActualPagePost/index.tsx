@@ -39,9 +39,9 @@ export const ActualPagePost: React.FC<IActualPagePost> = ({
   return (
     <div className="actual-page__post">
       <h2 className="actual-page__post-title">{title}</h2>
+      <p className="actual-page__post-date">{date}</p>
       <p className="actual-page__post-text">{decoded}</p>
-      <p className="actual-page__post-text">{date}</p>
-      <p className="actual-page__post-tags">{tags.map((tag) => `#${tag}`).join(', ')}</p>
+      <p className="actual-page__post-tags">{tags.map((tag) => `#${tag}`).join(' ')}</p>
       <div className="actual-page__post-images">
         <PostImageSlider slides={photoList} />
       </div>

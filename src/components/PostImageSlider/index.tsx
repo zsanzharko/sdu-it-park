@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './style.scss';
 
 interface IDecorationBanner {
@@ -13,56 +13,38 @@ interface IPostImageSlider {
 }
 
 export const PostImageSlider: React.FC<IPostImageSlider> = ({ slides }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isLeftActive, setIsLeftActive] = useState(false);
-  const [isRightActive, setIsRightActive] = useState(false);
+  const [activeSlide, setActiveSlide] = useState(0);
 
-  const goToPrevious = () => {
-    setCurrentIndex((index) => (index - 1 < 0 ? slides.length - 1 : index - 1));
+  const changeBackground = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    const index = +(e.currentTarget.getAttribute('data-id') as string);
+    setActiveSlide(index);
   };
-
-  const goToNext = () => {
-    setCurrentIndex((index) => (index + 1 === slides.length ? 0 : index + 1));
-  };
-
-  useEffect(() => {
-    setIsLeftActive(currentIndex === 0);
-    setIsRightActive(currentIndex === slides.length - 1);
-  }, [currentIndex, slides.length]);
 
   return (
-    <div className="decoration-banner post-image-slider">
-      <div className="decoration-banner__wrapper">
-        <button
-          type="button"
-          className="decoration-banner__arrow decoration-banner__arrow-left"
-          onClick={goToPrevious}
-          disabled={isLeftActive}
-        >
-          ❮
-        </button>
-        <button
-          type="button"
-          className="decoration-banner__arrow decoration-banner__arrow-right"
-          onClick={goToNext}
-          disabled={isRightActive}
-        >
-          ❯
-        </button>
-      </div>
+    <div className="post-slider">
       <div
-        className="decoration-banner__slides"
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        className="post-slider__wrapper"
+        style={{
+          background: `url(data:image/jpg;base64,${slides[activeSlide].contentByte}) center center / cover no-repeat`,
+        }}
+      />
+      <div
+        className="post-slider__buttons"
+        style={{ gridTemplateColumns: `repeat(${slides.length}, 1fr)` }}
       >
-        {slides.map((slide) => {
-          return (
-            <div
+        {slides.length > 1 &&
+          slides.map((slide, index) => (
+            <button
               key={slide.id}
-              className="decoration-banner__slide"
-              style={{ backgroundImage: `url(	data:image/jpg;base64,${slide.contentByte})` }}
-            />
-          );
-        })}
+              type="button"
+              className="post-slider__button"
+              data-id={index}
+              onClick={changeBackground}
+              disabled={index === activeSlide}
+            >
+              {index + 1}
+            </button>
+          ))}
       </div>
     </div>
   );
