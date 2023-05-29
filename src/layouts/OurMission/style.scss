@@ -52,6 +52,7 @@
 
   &.hand-left {
     width: 500px;
+    left: -750px;
 
     &.animation-hand {
       animation: handLeft 1s ease-out 0s forwards;
@@ -61,6 +62,7 @@
 
   &.hand-right {
     width: 500px;
+    right: -750px;
 
     &.animation-hand {
       animation: handRight 1s ease-out 0s forwards;
