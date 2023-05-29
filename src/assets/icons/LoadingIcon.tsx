@@ -1,3 +1,5 @@
+import './LoadingIcon.scss';
+
 export const LoadingIcon: React.FC = () => (
   <svg
     className="loading-icon"
