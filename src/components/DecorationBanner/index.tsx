@@ -4,10 +4,12 @@ import './style.scss';
 import banner1 from '../../assets/images/banner1.png';
 import banner2 from '../../assets/images/banner2.png';
 import banner3 from '../../assets/images/banner3.png';
+// import arrow from '../../assets/images/arrow-blue.jpg';
 
 interface IDecorationBanner {
   id: number;
   background: string;
+  title: string;
 }
 
 export const DecorationBanner: React.FC = () => {
@@ -36,14 +38,17 @@ export const DecorationBanner: React.FC = () => {
       {
         id: 0,
         background: `${banner1}`,
+        title: 'hardware',
       },
       {
         id: 1,
         background: `${banner2}`,
+        title: 'enterpreneurship',
       },
       {
         id: 2,
         background: `${banner3}`,
+        title: 'software',
       },
     ];
     setSlides(data);
@@ -90,7 +95,9 @@ export const DecorationBanner: React.FC = () => {
               key={slide.id}
               className="decoration-banner__slide"
               style={{ backgroundImage: `url(${slide.background})` }}
-            />
+            >
+              <p className="decoration-banner__text">{slide.title}</p>
+            </div>
           );
         })}
       </div>
