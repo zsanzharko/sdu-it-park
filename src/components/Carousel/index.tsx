@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import { ITeamSlide } from '../../utils/types';
 import './style.scss';
+import { LoadingIcon } from '../../assets/icons/LoadingIcon';
 
 interface ICarousel {
   slides: ITeamSlide[];
@@ -93,8 +94,8 @@ export const Carousel: React.FC<ICarousel> = ({ slides }) => {
   };
 
   useEffect(() => {
-    document.querySelector('.carousel__wrapper')!.innerHTML = '';
     if (slides.length > 0) {
+      document.querySelector('.carousel__wrapper')!.innerHTML = '';
       draw();
       draw();
       draw();
@@ -108,7 +109,7 @@ export const Carousel: React.FC<ICarousel> = ({ slides }) => {
 
   return (
     <div className="carousel">
-      <div className="carousel__wrapper" />
+      <div className="carousel__wrapper">{slides.length === 0 && <LoadingIcon />}</div>
       <p className="carousel__text" />
       <button
         className="carousel__button carousel__button-left"

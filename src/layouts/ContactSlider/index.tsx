@@ -52,9 +52,9 @@ export const ContactSlider: React.FC = () => {
       <div
         className="contact-slider__container"
         style={{
-          transform: `translateX(-${currentIndex * 690}px)`,
-          width: `${+people.length * 690}px`,
-          gridTemplateColumns: `repeat(${people.length}, 690px)`,
+          transform: `translateX(-${currentIndex * 590}px)`,
+          width: `${+people.length * 590}px`,
+          gridTemplateColumns: `repeat(${people.length}, 590px)`,
         }}
         ref={container}
       >

@@ -25,7 +25,7 @@ export const OurTeam: React.FC = () => {
 
   return (
     <section className="our-team">
-      <div className="our-tem__wrapper">
+      <div className="our-team__wrapper">
         <PageTitle name="наша команда" />
         <div className="our-team__buttons-container">
           <button
