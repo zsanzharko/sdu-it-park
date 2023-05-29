@@ -16,10 +16,10 @@ export const Carousel: React.FC<ICarousel> = ({ slides }) => {
     block.classList.add('team-slide');
     block.style.transform = `translateX(${offset * 320}px)`;
     block.setAttribute('data-id', `${slides[step].id}`);
+    block.setAttribute('data-name', slides[step].fullName);
     const image = document.createElement('div');
     image.classList.add('team-slide__image');
     image.style.background = `url(data:image/jpg;base64,${slides[step].photo}) center center / contain no-repeat`;
-    image.textContent = `${slides[step].id}`;
 
     block.appendChild(image);
     document.querySelector('.carousel__wrapper')!.appendChild(block);
@@ -45,10 +45,10 @@ export const Carousel: React.FC<ICarousel> = ({ slides }) => {
     block.classList.add('team-slide');
     block.style.transform = `translateX(${-3 * 320}px)`;
     block.setAttribute('data-id', `${slides[index].id}`);
+    block.setAttribute('data-name', slides[index].fullName);
     const image = document.createElement('div');
     image.classList.add('team-slide__image');
     image.style.background = `url(data:image/jpg;base64,${slides[index].photo}) center center / contain no-repeat`;
-    image.textContent = `${slides[index].id}`;
 
     block.appendChild(image);
     document.querySelector('.carousel__wrapper')!.prepend(block);
@@ -68,6 +68,8 @@ export const Carousel: React.FC<ICarousel> = ({ slides }) => {
       draw();
       (document.querySelector('#clickLeft') as HTMLElement).removeAttribute('disabled');
       (document.querySelector('#clickRight') as HTMLElement).removeAttribute('disabled');
+      (document.querySelector('.carousel__text') as HTMLElement).textContent =
+        sliderItems[4].getAttribute('data-name');
     }, 500);
   };
 
@@ -85,6 +87,8 @@ export const Carousel: React.FC<ICarousel> = ({ slides }) => {
       drawLeft();
       (document.querySelector('#clickLeft') as HTMLElement).removeAttribute('disabled');
       (document.querySelector('#clickRight') as HTMLElement).removeAttribute('disabled');
+      (document.querySelector('.carousel__text') as HTMLElement).textContent =
+        sliderItems[2].getAttribute('data-name');
     }, 500);
   };
 
@@ -98,17 +102,29 @@ export const Carousel: React.FC<ICarousel> = ({ slides }) => {
       draw();
       draw();
       draw();
+      (document.querySelector('.carousel__text') as HTMLElement).textContent = slides[3].fullName;
     }
   }, [slides]);
 
   return (
     <div className="carousel">
       <div className="carousel__wrapper" />
-      <button id="clickLeft" type="button" onClick={left}>
-        click left
+      <p className="carousel__text" />
+      <button
+        className="carousel__button carousel__button-left"
+        id="clickLeft"
+        type="button"
+        onClick={right}
+      >
+        ❮
       </button>
-      <button id="clickRight" type="button" onClick={right}>
-        click right
+      <button
+        className="carousel__button carousel__button-right"
+        id="clickRight"
+        type="button"
+        onClick={left}
+      >
+        ❯
       </button>
     </div>
   );
