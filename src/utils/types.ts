@@ -13,6 +13,12 @@ export interface IContactsBlock {
   phoneNumber: string;
 }
 
+export interface IPartnersSlider {
+  id: 0;
+  sponsorName: string;
+  logo: string;
+}
+
 export interface ITeamSlide {
   id: number;
   type: 'STUDENT' | 'EMPLOYEE';
@@ -54,6 +60,11 @@ export interface IStore {
   };
   actualPostsData: {
     posts: IActualPagePost[];
+    isNew: boolean;
+    pending: boolean;
+  };
+  partnersList: {
+    partners: IPartnersSlider[];
     isNew: boolean;
     pending: boolean;
   };

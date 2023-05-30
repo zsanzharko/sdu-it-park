@@ -35,10 +35,9 @@ const actualPostsData = createSlice({
         state.pending = false;
         state.posts = action.payload;
         state.initialPosts = action.payload;
-        state.isNew = false;
       })
-      .addCase(fetchActualPostsData.rejected, () => {
-        // TODO: add rejected state handler
+      .addCase(fetchActualPostsData.rejected, (state) => {
+        state.isNew = true;
       });
   },
 });
