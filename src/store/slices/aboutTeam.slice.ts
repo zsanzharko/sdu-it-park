@@ -22,11 +22,10 @@ const aboutTeamData = createSlice({
       })
       .addCase(fetchAboutTeamData.fulfilled, (state, action) => {
         state.team = action.payload;
-        state.isNew = false;
         state.pending = false;
       })
-      .addCase(fetchAboutTeamData.rejected, () => {
-        // TODO: add rejected state handler
+      .addCase(fetchAboutTeamData.rejected, (state) => {
+        state.isNew = true;
       });
   },
 });

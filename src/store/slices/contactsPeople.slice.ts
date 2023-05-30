@@ -26,10 +26,9 @@ const contactsPeopleData = createSlice({
       .addCase(fetchContactsData.fulfilled, (state, action) => {
         state.people = action.payload;
         state.pending = false;
-        state.isNew = false;
       })
-      .addCase(fetchContactsData.rejected, () => {
-        // TODO: add rejected state handler
+      .addCase(fetchContactsData.rejected, (state) => {
+        state.isNew = true;
       });
   },
 });
