@@ -1,16 +1,16 @@
 @keyframes handLeft {
-  0% { left: -750px; }
-  25% { left: -500px; }
-  50% { left: -250px; }
-  75% { left: -100px; }
+  0% { left: -550px; }
+  25% { left: -400px; }
+  50% { left: -150px; }
+  75% { left: -50px; }
   100% { left: -10px; }
 }
 
 @keyframes handRight {
-  0% { right: -750px; }
-  25% { right: -500px; }
-  50% { right: -250px; }
-  75% { right: -100px; }
+  0% { right: -550px; }
+  25% { right: -400px; }
+  50% { right: -150px; }
+  75% { right: -50px; }
   100% { right: -10px; }
 }
 
@@ -52,7 +52,7 @@
 
   &.hand-left {
     width: 500px;
-    left: -750px;
+    left: -550px;
 
     &.animation-hand {
       animation: handLeft 1s ease-out 0s forwards;
@@ -62,7 +62,7 @@
 
   &.hand-right {
     width: 500px;
-    right: -750px;
+    right: -550px;
 
     &.animation-hand {
       animation: handRight 1s ease-out 0s forwards;
