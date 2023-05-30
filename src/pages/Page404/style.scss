@@ -1,0 +1,25 @@
+.page-undefined {
+  height: calc(100vh - 170px);
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  background: url(../../assets/images/sdu.png), #474747;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.page-undefined__text {
+  font-family: var(--font);
+  font-weight: 300;
+  font-size: 40px;
+  color: #fff;
+
+  &-large {
+    font-weight: 700;
+    font-size: 100px;
+    color: #fff;
+  }
+}
