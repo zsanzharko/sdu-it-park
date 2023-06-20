@@ -8,7 +8,7 @@ import './main.scss';
 import store from './store/store';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <GoogleOAuthProvider clientId="443129382037-vf7k7fnf0sd2mr4gufr8umh5dtk2uadm.apps.googleusercontent.com">
+  <GoogleOAuthProvider clientId="459773865241-s26a0bat2sp0mre6hmdqf7hurmvd6boq.apps.googleusercontent.com">
     <Provider store={store}>
       <BrowserRouter>
         <App />
